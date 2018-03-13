@@ -7,25 +7,19 @@
       {
         "title": "PORTFOLIO_SOFTWARE_TITLE",
         "iconClass": "fab fa-5x fa-github",
-        "gridClass": "col-xs-12 col-md-6 col-lg-3",
+        "gridClass": "col-xs-12 col-md-6 col-lg-4",
         "text": "PORTFOLIO_SOFTWARE_TEXT"
-      },
-      {
-        "title": "PORTFOLIO_BTC_TITLE",
-        "iconClass": "fab fa-5x fa-btc",
-        "gridClass": "col-xs-12 col-md-6 col-lg-3",
-        "text": "PORTFOLIO_BTC_TEXT"
       },
       {
         "title": "PORTFOLIO_SERVICES_TITLE",
         "iconClass": "fas fa-5x fa-code-branch",
-        "gridClass": "col-xs-12 col-md-6 col-lg-3",
+        "gridClass": "col-xs-12 col-md-6 col-lg-4",
         "text": "PORTFOLIO_SERVICES_TEXT"
       },
       {
         "title": "PORTFOLIO_TRAINING_TITLE",
         "iconClass": "fab fa-5x fa-leanpub",
-        "gridClass": "col-xs-12 col-md-6 col-lg-3",
+        "gridClass": "col-xs-12 col-md-6 col-lg-4",
         "text": "PORTFOLIO_TRAINING_TEXT"
       }
     ]

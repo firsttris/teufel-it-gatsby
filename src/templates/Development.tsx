@@ -7,13 +7,5 @@ const OldComputer = require('./../assets/images/oldComputer2.jpg');
 const DevelopmentJson = require('./../pages/development.json');
 
 export default () => (
-  <div>
-    <Helmet>
-      <title>Teufel IT, Software ist unser Handwerk</title>
-      <meta charSet="utf-8" />
-      <meta name="description" content="Teufel IT, Softwareentwicklung, JavaScript, NodeJs, Integration" />
-      <link rel="canonical" href="http://teufel-it.de" />
-    </Helmet>
-    <Parallax firstImage={OldComputer} middleImage={MuchCode} lastImage={OldComputer} json={DevelopmentJson} />
-  </div>
+  <Parallax firstImage={OldComputer} middleImage={MuchCode} lastImage={OldComputer} json={DevelopmentJson} />
 );

@@ -7,11 +7,12 @@ interface Props {
   title: string;
   text: string;
 }
+
 export default (props: Props) => (
   <div className="row py-3" style={props.style}>
     <div className="col">
       <SectionHeader title={props.title} />
-      {props.text ? <FormattedMessage id={props.text} /> : ''}
+      {props.text ? <FormattedMessage id={props.text} /> : null}
     </div>
   </div>
 );

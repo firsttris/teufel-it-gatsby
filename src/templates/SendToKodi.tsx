@@ -1,13 +1,23 @@
+import * as React from 'react';
+import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
+import Contact from './../components/Contact';
 import Impressum from './../components/Impressum';
+
 const Lines = require('./../assets/images/backgrounds/lines.png');
 const SendToKodiScreen1 = require('./../assets/images/SendToKodi/1.jpg');
 const SendToKodiScreen2 = require('./../assets/images/SendToKodi/2.jpg');
 const SendToKodiScreen3 = require('./../assets/images/SendToKodi/3.jpg');
 const SendToKodiScreen4 = require('./../assets/images/SendToKodi/4.jpg');
 const Logo = require('./../assets/images/SendToKodi/logo.jpg');
-import * as React from 'react';
-import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
-import Contact from './../components/Contact';
+
+const imgStyle: React.CSSProperties = {
+  borderRadius: '25px',
+  border: '1px solid black',
+  height: 'auto',
+  width: '250px'
+};
+
+const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` };
 
 interface Props extends InjectedIntlProps {}
 
@@ -23,7 +33,7 @@ class SendToKodi extends React.Component<Props, State> {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const countries = ['de', 'us', 'gb', 'nl', 'ro', 'fr'];
     for (const index in countries) {
       if (countries[index]) {
@@ -58,14 +68,8 @@ class SendToKodi extends React.Component<Props, State> {
   }
 
   render() {
-    const imgStyle = {
-      borderRadius: '25px',
-      border: '1px solid black',
-      height: 'auto',
-      width: '250px'
-    };
     return (
-      <div className="container-fluid" style={{ backgroundImage: `url(${Lines})` }}>
+      <div className="container-fluid" style={containerStyle}>
         <div style={{ height: '75px' }} />
         <div className="container">
           <div className="row">

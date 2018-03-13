@@ -1,22 +1,25 @@
-const Lines = require('../assets/images/backgrounds/lines.png');
-const Unicorn = require('../assets/images/NotFound/unicorn-small.png');
 import Link from 'gatsby-link';
 import * as React from 'react';
 import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
 
+const Lines = require('../assets/images/backgrounds/lines.png');
+const Unicorn = require('../assets/images/NotFound/unicorn-small.png');
+
+const containerStyle: React.CSSProperties = {
+  textAlign: 'center',
+  fontFamily: 'monospace',
+  backgroundImage: `url(${Lines})`,
+  position: 'absolute',
+  width: '100%',
+  height: window.innerHeight,
+  paddingTop: '100px'
+};
+const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px', height: '200px' };
+const spacerStyle: React.CSSProperties = { height: '80px' };
+
 const NotFound = (props: InjectedIntlProps) => (
-  <div
-    style={{
-      textAlign: 'center',
-      fontFamily: 'monospace',
-      backgroundImage: `url(${Lines})`,
-      position: 'absolute',
-      width: '100%',
-      height: window.innerHeight,
-      paddingTop: '100px'
-    }}
-  >
-    <img src={Unicorn} alt="Not Found" style={{ marginTop: '50px', marginBottom: '50px', height: '200px' }} />
+  <div style={containerStyle}>
+    <img src={Unicorn} alt="Not Found" style={imageStyle} />
     <h2>
       <FormattedMessage id="ERROR_TEXT" />
     </h2>
@@ -27,7 +30,7 @@ const NotFound = (props: InjectedIntlProps) => (
       <FormattedMessage id="ERROR_CONTACT_US" />
     </div>
     <div>
-      <div className="spacer" style={{ height: '80px' }} />
+      <div className="spacer" style={spacerStyle} />
       <div>
         <b>
           <FormattedMessage id="CONTACT_TITLE" />

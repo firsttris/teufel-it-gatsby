@@ -9,6 +9,8 @@ import SectionHeaderWithSubRow from './../components/SectionHeaderWithSubRow';
 const Lines = require('./../assets/images/backgrounds/lines.png');
 const OldComputer = require('./../assets/images/code.jpg');
 
+const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` };
+
 interface Props {}
 
 interface State {
@@ -16,6 +18,7 @@ interface State {
   filteredRepositories: any[];
   repositories: any[];
 }
+
 class Github extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -55,8 +58,8 @@ class Github extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="container-fluid" style={{ backgroundImage: `url(${Lines})` }}>
-        <div style={{ textAlign: 'center' }}>
+      <div className="container-fluid" style={containerStyle}>
+        <div className="text-center">
           <FullImage image={OldComputer} height="550px" />
           <Header />
         </div>

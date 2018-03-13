@@ -2,6 +2,14 @@ import Link from 'gatsby-link';
 import * as React from 'react';
 import './LinkItem.css';
 
+const linkStyle: React.CSSProperties = {
+  display: 'block',
+  color: 'white',
+  textAlign: 'center',
+  padding: '14px 16px',
+  textDecoration: 'none'
+};
+
 interface Props {
   focus: boolean;
   path: string;
@@ -29,13 +37,6 @@ export default class LinkItem extends React.Component<Props, State> {
   };
 
   getLinkStyle() {
-    const linkStyle = {
-      display: 'block',
-      color: 'white',
-      textAlign: 'center',
-      padding: '14px 16px',
-      textDecoration: 'none'
-    };
     if (this.props.focus) {
       return { ...linkStyle, ...{ backgroundColor: '#f00' } };
     }

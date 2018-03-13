@@ -1,15 +1,16 @@
-const Paper = require('./../assets/images/backgrounds/paper.png');
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-const blackBackgroundStyle = {
+const Paper = require('./../assets/images/backgrounds/paper.png');
+
+const blackBackgroundStyle: React.CSSProperties = {
   backgroundImage: `url(${Paper})`,
   color: 'white',
   textAlign: 'left',
   fontSize: 'small'
 };
-const textStyle = { color: 'white' };
-const fontSizeMedium = { fontSize: 'medium' };
+const textStyle: React.CSSProperties = { color: 'white' };
+const fontSizeMedium: React.CSSProperties = { fontSize: 'medium' };
 
 export default () => (
   <div className="row" style={blackBackgroundStyle}>
@@ -79,6 +80,7 @@ export default () => (
             </a>
           </div>
           <div>Finanzamt Baden-Baden 36216/14624</div>
+          <div>UST-ID 022312 23213 12 1221</div>
         </div>
       </div>
     </div>

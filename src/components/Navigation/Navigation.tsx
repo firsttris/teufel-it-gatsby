@@ -1,8 +1,24 @@
 import * as React from 'react';
 import { InjectedIntl, injectIntl } from 'react-intl';
-const Paper = require('../../assets/images/backgrounds/paper.png');
 import LinkItem from './LinkItem';
 import './Navigation.css';
+
+const Paper = require('../../assets/images/backgrounds/paper.png');
+
+const navButtonStyle: React.CSSProperties = {
+  margin: '10px',
+  color: '#f00',
+  textDecoration: 'none'
+};
+
+const ulStyle: React.CSSProperties = {
+  listStyleType: 'none',
+  margin: '0',
+  padding: '0',
+  overflow: 'hidden',
+  backgroundImage: `url(${Paper})`,
+  borderBottom: '1px solid #f00'
+};
 
 interface Props {
   intl: InjectedIntl;
@@ -45,23 +61,10 @@ class Navigation extends React.Component<Props, State> {
       { path: `/${this.props.intl.locale}/Github`, name: this.props.intl.messages.NAVIGATION_PROJECTS },
       { path: `/${this.props.intl.locale}/SendToKodi`, name: this.props.intl.messages.NAVIGATION_SENDTOKODI }
     ];
-    const navButtonStyle = {
-      margin: '10px',
-      color: '#f00',
-      textDecoration: 'none'
-    };
+
     return (
       <div className="nav-bar">
-        <ul
-          style={{
-            listStyleType: 'none',
-            margin: '0',
-            padding: '0',
-            overflow: 'hidden',
-            backgroundImage: `url(${Paper})`,
-            borderBottom: '1px solid #f00'
-          }}
-        >
+        <ul style={ulStyle}>
           <li className="nav-button">
             <a className="btn btn-outline-dark pull-left" style={navButtonStyle} onClick={this.scrollToBottom}>
               Contact

@@ -2,10 +2,12 @@ import * as React from 'react';
 import SectionHeader from './SectionHeader';
 import Social from './Social';
 
+const spanStyle: React.CSSProperties = { fontSize: '30px', letterSpacing: '10px' };
+
 export default () => (
   <div className="row py-3 text-center">
     <div className="col">
-      <span className="text-uppercase" style={{ fontSize: '30px', letterSpacing: '10px' }}>
+      <span className="text-uppercase" style={spanStyle}>
         <SectionHeader title="CONTACT_TITLE" />
       </span>
       <div>

@@ -1,5 +1,4 @@
 import * as React from 'react';
-const Lines = require('./../assets/images/backgrounds/lines.png');
 import Contact from './Contact';
 import FullImage from './FullImage';
 import Header from './Header';
@@ -7,27 +6,28 @@ import Impressum from './Impressum';
 import Portfolio from './Portfolio';
 import Principle from './Principle';
 
+const Lines = require('./../assets/images/backgrounds/lines.png');
+
 interface Props {
   json: any;
-  image1: any;
-  image2: any;
-  image3: any;
+  firstImage: any;
+  middleImage: any;
+  lastImage: any;
 }
 
+const containerStyle: React.CSSProperties = {
+  textAlign: 'center',
+  backgroundImage: `url(${Lines})`
+};
+
 export default (props: Props) => (
-  <div
-    className="container-fluid"
-    style={{
-      textAlign: 'center',
-      backgroundImage: `url(${Lines})`
-    }}
-  >
-    <FullImage image={props.image1} height="550px" />
+  <div className="container-fluid" style={containerStyle}>
+    <FullImage image={props.firstImage} height="550px" />
     <Header />
     <Portfolio json={props.json.portfolio} />
-    <FullImage image={props.image2} height="350px" />
+    <FullImage image={props.middleImage} height="350px" />
     <Principle json={props.json.principles} />
-    <FullImage image={props.image3} height="350px" />
+    <FullImage image={props.lastImage} height="350px" />
     <Contact />
     <Impressum />
   </div>

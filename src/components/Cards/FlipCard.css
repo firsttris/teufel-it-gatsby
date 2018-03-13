@@ -1,0 +1,7 @@
+.cards {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}

@@ -1,4 +1,5 @@
 const path = require('path');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
 
 exports.createPages = async ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
@@ -23,4 +24,15 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       });
     });
   });
+};
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'develop-html' || stage === 'build-html') {
+    config.plugin(`WepApp`, WebappWebpackPlugin, [
+      {
+        logo: './src/assets/favicon.png',
+        prefix: 'assets/'
+      }
+    ]);
+  }
 };

@@ -6,6 +6,12 @@ const MuchCode = require('./../assets/images/much_code.jpg');
 const OldComputer = require('./../assets/images/oldComputer2.jpg');
 const DevelopmentJson = require('./../pages/development.json');
 
-export default () => (
-  <Parallax firstImage={OldComputer} middleImage={MuchCode} lastImage={OldComputer} json={DevelopmentJson} />
+interface Props {
+  transition: React.CSSProperties;
+}
+
+export default ({ transition }: Props) => (
+  <div style={transition && transition.style}>
+    <Parallax firstImage={OldComputer} middleImage={MuchCode} lastImage={OldComputer} json={DevelopmentJson} />
+  </div>
 );

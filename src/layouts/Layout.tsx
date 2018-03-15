@@ -3,9 +3,8 @@ import * as React from 'react';
 import Helmet from 'react-helmet';
 import { IntlProvider, Messages } from 'react-intl';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Navigation from '../components/Navigation/Navigation';
-import './fade.css';
+
 require('./../assets/font-awesome_5.0.8.js');
 
 interface LayoutProps extends RouteComponentProps<{}> {
@@ -25,11 +24,7 @@ const Layout = ({ children, locale, messages, location }: LayoutProps): JSX.Elem
         ]}
       />
       <Navigation />
-      <TransitionGroup>
-        <CSSTransition key={location.pathname} classNames="fade" timeout={{ enter: 500, exit: 500 }}>
-          {children()}
-        </CSSTransition>
-      </TransitionGroup>
+      {children()}
     </div>
   </IntlProvider>
 );

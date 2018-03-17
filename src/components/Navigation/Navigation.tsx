@@ -69,8 +69,8 @@ class Navigation extends React.Component<Props, State> {
             <a className="btn btn-outline-dark pull-left" style={navButtonStyle} onClick={this.scrollToBottom}>
               Contact
             </a>
-            <a className="btn btn-outline-dark pull-right" style={navButtonStyle}>
-              <i className="fa fa-bars" aria-hidden="true" onClick={this.toggleNavigation} />
+            <a className="btn btn-outline-dark pull-right" style={navButtonStyle} onClick={this.toggleNavigation}>
+              <i className="fa fa-bars" aria-hidden="true" />
             </a>
             <div className="clearfix" />
           </li>

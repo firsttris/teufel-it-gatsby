@@ -58,7 +58,7 @@ class Github extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="container-fluid" style={containerStyle}>
+      <div className="container-fluid page" style={containerStyle}>
         <div className="text-center">
           <FullImage image={OldComputer} height="550px" />
           <Header />

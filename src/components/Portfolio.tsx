@@ -5,6 +5,7 @@ import SectionHeaderWithSubRow from './SectionHeaderWithSubRow';
 interface Props {
   json: any;
 }
+
 export default (props: Props) => (
   <div className="row">
     <div className="col">

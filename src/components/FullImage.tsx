@@ -44,8 +44,7 @@ export default class FullImage extends React.Component<Props, State> {
           <div
             style={{
               ...fullImageStyle,
-              backgroundImage: `url(${this.props.image})`,
-              height: this.props.height
+              backgroundImage: `url(${this.props.image})`
             }}
           />
         </div>

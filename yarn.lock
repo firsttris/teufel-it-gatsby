@@ -7107,6 +7107,10 @@ relay-runtime@1.4.1:
     fbjs "^0.8.14"
     relay-debugger-react-native-runtime "0.0.10"
 
+rellax@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/rellax/-/rellax-1.6.0.tgz#c971ff228a3178f407752e19b2f3d7a588859878"
+
 remote-redux-devtools@^0.5.7:
   version "0.5.12"
   resolved "https://registry.yarnpkg.com/remote-redux-devtools/-/remote-redux-devtools-0.5.12.tgz#42cb95dfa9e54c1d9671317c5e7bba41e68caec2"

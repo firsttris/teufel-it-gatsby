@@ -34,6 +34,10 @@ class SendToKodi extends React.Component<Props, State> {
   }
 
   componentDidMount() {
+    setTimeout(() => this.callService(), 1000);
+  }
+
+  callService() {
     const countries = ['de', 'us', 'gb', 'nl', 'ro', 'fr'];
     for (const index in countries) {
       if (countries[index]) {

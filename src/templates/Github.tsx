@@ -30,6 +30,10 @@ class Github extends React.Component<Props, State> {
   }
 
   componentDidMount() {
+    setTimeout(() => this.callService(), 1000);
+  }
+
+  callService() {
     fetch('https://api.github.com/users/firsttris/repos').then(data =>
       data.json().then(result => {
         const repos = result.filter((repository: any) => repository.fork === false);

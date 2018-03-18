@@ -34,7 +34,7 @@ class FlipCard extends React.Component<Props, State> {
   };
 
   render() {
-    const flipStyle = {
+    const flipStyle: React.CSSProperties = {
       width: '100%',
       transformStyle: 'preserve-3d',
       transition: 'transform 1s linear',

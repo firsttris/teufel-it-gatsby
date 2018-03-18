@@ -11,6 +11,16 @@ interface State {
   flipped: boolean;
 }
 
+const verticalCenterStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center'
+};
+
+const spanStyle: React.CSSProperties = {
+  marginLeft: '10px',
+  fontSize: '20px'
+};
+
 export default class FadeCard extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -32,11 +42,7 @@ export default class FadeCard extends React.Component<Props, State> {
   };
 
   render() {
-    const verticalCenterStyle: any = {
-      display: 'inline-flex',
-      alignItems: 'center'
-    };
-    const colorTransitionStyle: any = { transition: 'color 2s linear 1s' };
+    const colorTransitionStyle: React.CSSProperties = { transition: 'color 2s linear 1s' };
     colorTransitionStyle.color = this.state.flipped ? 'white' : '#f00';
     return (
       <div
@@ -46,8 +52,10 @@ export default class FadeCard extends React.Component<Props, State> {
         onClick={this.onClick}
       >
         <div style={verticalCenterStyle}>
-          <i className={this.props.icon} style={colorTransitionStyle} aria-hidden="true" />
-          <span className="text-uppercase" style={{ marginLeft: '10px', fontSize: '20px' }}>
+          <span style={colorTransitionStyle}>
+            <i className={this.props.icon} />
+          </span>
+          <span className="text-uppercase" style={spanStyle}>
             <FormattedMessage id={this.props.title} />
           </span>
         </div>

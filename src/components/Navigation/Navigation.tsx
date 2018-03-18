@@ -22,6 +22,7 @@ const ulStyle: React.CSSProperties = {
 
 interface Props {
   intl: InjectedIntl;
+  onClick: (className: string) => void;
 }
 
 interface State {
@@ -30,6 +31,7 @@ interface State {
 }
 
 class Navigation extends React.Component<Props, State> {
+  prevIndex: number = 0;
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -42,8 +44,10 @@ class Navigation extends React.Component<Props, State> {
     this.setState({ currentPath: location.pathname });
   }
 
-  onClick = (): void => {
+  onClick = (index: number): void => {
     this.setState({ currentPath: location.pathname, hideNav: true });
+    this.prevIndex > index ? this.props.onClick('pageSliderRight') : this.props.onClick('pageSliderLeft');
+    this.prevIndex = index;
   };
 
   toggleNavigation = (): void => {
@@ -77,7 +81,7 @@ class Navigation extends React.Component<Props, State> {
           <div className={this.state.hideNav ? 'navigation' : ''}>
             {navItems.map((item, index) => {
               return (
-                <div key={index} onClick={this.onClick}>
+                <div key={index} onClick={() => this.onClick(index)}>
                   <LinkItem focus={this.state.currentPath === item.path} path={item.path} name={item.name} />
                 </div>
               );
@@ -89,4 +93,4 @@ class Navigation extends React.Component<Props, State> {
   }
 }
 
-export default injectIntl<{}>(Navigation);
+export default injectIntl(Navigation);

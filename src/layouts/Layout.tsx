@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Location } from 'history';
 import * as React from 'react';
 import Helmet from 'react-helmet';
-import { IntlProvider, Messages } from 'react-intl';
+import { InjectedIntl, InjectedIntlProps, injectIntl, IntlProvider, Messages } from 'react-intl';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Navigation from '../components/Navigation/Navigation';
@@ -30,7 +30,7 @@ const getPathDepth = (location: Location) => {
   return pathArr.length;
 };
 
-interface LayoutProps extends RouteComponentProps<{}> {
+interface LayoutProps extends RouteComponentProps<{}>, InjectedIntlProps {
   children: () => JSX.Element;
   locale: string;
   messages: Messages;
@@ -38,19 +38,21 @@ interface LayoutProps extends RouteComponentProps<{}> {
 
 interface LayoutState {
   prevDepth: number;
+  className: string;
 }
 
 class Layout extends React.Component<LayoutProps, LayoutState> {
   constructor(props: LayoutProps) {
     super(props);
     this.state = {
+      className: 'pageSliderRight',
       prevDepth: getPathDepth(props.location)
     };
   }
 
-  componentWillReceiveProps() {
-    this.setState({ prevDepth: getPathDepth(this.props.location) });
-  }
+  onClassChange = (className: string) => {
+    this.setState({ className });
+  };
 
   render() {
     return (
@@ -63,14 +65,12 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
               { name: 'keywords', content: 'Softwareentwicklung, JavaScript, NodeJs, React' }
             ]}
           />
-          <Navigation />
+          <Navigation onClick={this.onClassChange} intl={this.props.intl} />
           <TransitionGroup>
             <CSSTransition
               key={location.pathname}
-              classNames={
-                getPathDepth(this.props.location) - this.state.prevDepth > 0 ? 'pageSliderLeft' : 'pageSliderRight'
-              }
-              timeout={{ enter: 500, exit: 500 }}
+              classNames={this.state.className}
+              timeout={{ enter: 1000, exit: 1000 }}
               mountOnEnter={false}
               unmountOnExit={true}
             >

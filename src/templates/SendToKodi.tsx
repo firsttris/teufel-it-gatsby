@@ -69,7 +69,7 @@ class SendToKodi extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="container-fluid" style={containerStyle}>
+      <div className="container-fluid page" style={containerStyle}>
         <div style={{ height: '75px' }} />
         <div className="container">
           <div className="row">

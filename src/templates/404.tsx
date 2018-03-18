@@ -18,7 +18,7 @@ const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px
 const spacerStyle: React.CSSProperties = { height: '80px' };
 
 const NotFound = (props: InjectedIntlProps) => (
-  <div style={containerStyle}>
+  <div style={containerStyle} className="page">
     <img src={Unicorn} alt="Not Found" style={imageStyle} />
     <h2>
       <FormattedMessage id="ERROR_TEXT" />

@@ -65,10 +65,10 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
               { name: 'keywords', content: 'Softwareentwicklung, JavaScript, NodeJs, React' }
             ]}
           />
-          <Navigation onClick={this.onClassChange} intl={this.props.intl} />
+          <Navigation onClick={this.onClassChange} intl={this.props.intl} location={this.props.location} />
           <TransitionGroup>
             <CSSTransition
-              key={location.pathname}
+              key={this.props.location.pathname}
               classNames={this.state.className}
               timeout={{ enter: 1000, exit: 1000 }}
               mountOnEnter={false}

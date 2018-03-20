@@ -14,6 +14,8 @@ interface Props {
   focus: boolean;
   path: string;
   name: string;
+  index: number;
+  onClick: (index: number, path: string) => void;
 }
 
 interface State {
@@ -46,13 +48,19 @@ export default class LinkItem extends React.Component<Props, State> {
     return linkStyle;
   }
 
+  handleLinkClick = () => {
+    this.props.onClick(this.props.index, this.props.path);
+  };
+
   render() {
     return (
-      <li className="link-item" onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
-        <Link style={this.getLinkStyle()} to={this.props.path}>
-          {this.props.name}
-        </Link>
-      </li>
+      <div onClick={this.handleLinkClick}>
+        <li className="link-item" onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
+          <Link style={this.getLinkStyle()} to={this.props.path}>
+            {this.props.name}
+          </Link>
+        </li>
+      </div>
     );
   }
 }

@@ -1,3 +1,4 @@
+import { Location } from 'history';
 import * as React from 'react';
 import { InjectedIntl, injectIntl } from 'react-intl';
 import LinkItem from './LinkItem';
@@ -22,6 +23,7 @@ const ulStyle: React.CSSProperties = {
 
 interface Props {
   intl: InjectedIntl;
+  location: Location;
   onClick: (className: string) => void;
 }
 
@@ -40,12 +42,12 @@ class Navigation extends React.Component<Props, State> {
     };
   }
 
-  componentWillMount(): void {
-    this.setState({ currentPath: location.pathname });
+  componentDidMount(): void {
+    this.setState({ currentPath: this.props.location.pathname });
   }
 
-  onClick = (index: number): void => {
-    this.setState({ currentPath: location.pathname, hideNav: true });
+  onClick = (index: number, path: string): void => {
+    this.setState({ currentPath: path, hideNav: true });
     this.prevIndex > index ? this.props.onClick('pageSliderRight') : this.props.onClick('pageSliderLeft');
     this.prevIndex = index;
   };
@@ -81,9 +83,14 @@ class Navigation extends React.Component<Props, State> {
           <div className={this.state.hideNav ? 'navigation' : ''}>
             {navItems.map((item, index) => {
               return (
-                <div key={index} onClick={() => this.onClick(index)}>
-                  <LinkItem focus={this.state.currentPath === item.path} path={item.path} name={item.name} />
-                </div>
+                <LinkItem
+                  key={index}
+                  index={index}
+                  focus={this.state.currentPath === item.path}
+                  path={item.path}
+                  name={item.name}
+                  onClick={this.onClick}
+                />
               );
             })}
           </div>

@@ -6,4 +6,5 @@ export default () => {
     const homeUrl = withPrefix(`/de/`);
     location.replace(homeUrl);
   }
+  return <div />;
 };

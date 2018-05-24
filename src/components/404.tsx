@@ -11,7 +11,7 @@ const containerStyle: React.CSSProperties = {
   backgroundImage: `url(${Lines})`,
   position: 'absolute',
   width: '100%',
-  height: '100%',
+  height: '100vh',
   paddingTop: '100px'
 };
 const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px', height: '200px' };

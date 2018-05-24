@@ -1,9 +1,7 @@
+import { toImage } from 'emojione';
 import * as React from 'react';
-/// <reference path="./Emojify.d.ts" />
-import Emojify = require('react-emojione');
 
 const smallStyle: React.CSSProperties = { float: 'right', width: '100px', textAlign: 'right' };
-const resolveEmojis = (text: string) => (text ? Emojify.emojify(text) : null);
 
 interface Props {
   repo: any;
@@ -26,7 +24,7 @@ export default (props: Props) => (
         <i className="fas fa-code-branch mx-1" />
         <span>{props.repo.forks_count}</span>
       </small>
-      <p className="mb-1">{resolveEmojis(props.repo.description)}</p>
+      <div className="mb-1" dangerouslySetInnerHTML={{ __html: toImage(props.repo.description || '') }} />
       <small>{props.repo.language}</small>
     </a>
   </div>

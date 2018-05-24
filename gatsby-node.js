@@ -9,7 +9,8 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     { path: '/Consulting', name: 'Consulting' },
     { path: '/Github', name: 'Github' },
     { path: '/SendToKodi', name: 'SendToKodi' },
-    { path: '/404', name: '404' }
+    { path: '/404', name: '404' },
+    { path: '/Privacy', name: 'Privacy' }
   ];
 
   const locales = ['de', 'en'];
@@ -27,7 +28,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 };
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'develop-html' || stage === 'build-html') {
+  if (stage === 'build-html') {
     config.plugin(`WepApp`, WebappWebpackPlugin, [
       {
         logo: './src/assets/favicon.png',

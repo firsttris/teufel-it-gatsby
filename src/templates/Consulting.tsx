@@ -8,6 +8,15 @@ const ConsultingJson = require('./../pages/consulting.json');
 
 export default () => (
   <div className="page">
+    <Helmet>
+      <title>Teufel IT, IT-Strategieberatung, Geschäftsanwendungen, Geschäftsprozesse</title>
+      <meta charSet="utf-8" />
+      <meta
+        name="description"
+        content="Teufel IT, Softwareentwicklung, Integration, IT-Beratung, IT-Strategieberatung, Geschäftsanwendungen, Geschäftsprozesse"
+      />
+      <link rel="canonical" href="http://teufel-it.de/it-strategieberatung" />
+    </Helmet>
     <Parallax firstImage={Meeting} middleImage={Server} lastImage={Meeting} json={ConsultingJson} />
   </div>
 );

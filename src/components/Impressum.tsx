@@ -15,7 +15,7 @@ const fontSizeMedium: React.CSSProperties = { fontSize: 'medium' };
 export default () => (
   <div className="row" style={blackBackgroundStyle}>
     <div className="container py-3">
-      <p>© 2017 Teufel-IT</p>
+      <p>© 2018 Teufel-IT</p>
       <div className="row">
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
           <div style={fontSizeMedium}>
@@ -79,8 +79,7 @@ export default () => (
               info@teufel-it.de
             </a>
           </div>
-          <div>Finanzamt Baden-Baden 36216/14624</div>
-          <div>UST-ID 022312 23213 12 1221</div>
+          <div>UST-ID DE304672147</div>
         </div>
       </div>
     </div>

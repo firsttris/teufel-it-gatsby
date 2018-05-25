@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import Parallax from './../components/Parallax';
+import { consulting } from './../pages/consulting';
 
 const Meeting = require('./../assets/images/meeting2.jpg');
 const Server = require('./../assets/images/server2.jpg');
-const ConsultingJson = require('./../pages/consulting.json');
 
 export default () => (
   <div className="page">
@@ -17,6 +17,6 @@ export default () => (
       />
       <link rel="canonical" href="http://teufel-it.de/it-strategieberatung" />
     </Helmet>
-    <Parallax firstImage={Meeting} middleImage={Server} lastImage={Meeting} json={ConsultingJson} />
+    <Parallax firstImage={Meeting} middleImage={Server} lastImage={Meeting} json={consulting} />
   </div>
 );

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { addLocaleData, InjectedIntlProps } from 'react-intl';
 import Layout from './Layout';
 const localeData = require('react-intl/locale-data/de');
-const messages = require('../translations/de.json');
+import { messages } from './../translations/de';
 
 addLocaleData(localeData);
 

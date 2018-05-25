@@ -33,7 +33,7 @@ const getPathDepth = (location: Location) => {
 interface LayoutProps extends RouteComponentProps<{}>, InjectedIntlProps {
   children: () => JSX.Element;
   locale: string;
-  messages: Messages;
+  messages: any;
 }
 
 interface LayoutState {

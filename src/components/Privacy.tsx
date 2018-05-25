@@ -37,23 +37,25 @@ const Privacy = (props: InjectedIntlProps) => (
         </div>
         <div className="mt-4">
           <h4>Zugriffsdaten</h4>
-          <p>Die Website selbst speichert keine Zugriffsdaten. </p>{' '}
-          <p>
-            Die Website ist bei <a href="https://pages.github.com/">Github-Pages</a> gehostet. Github-Pages erstellt
-            keine Zugriffsdaten, die für den Seitenbereiber zugänglich sind.{' '}
-          </p>
-          <p>
+          <div>Die Website selbst speichert keine Zugriffsdaten. </div>
+          <div>
+            Der Quell-Code der Website ist frei auf Github{' '}
+            <a href="https://github.com/firsttris/teufel-it-gatsby" target="_blank">
+              einsehbar
+            </a>.
+          </div>
+          <div>
+            Die Website ist bei Github gehostet. Github erstellt keine Zugriffsdaten die für den Seitenbereiber
+            zugänglich sind.
+          </div>
+          <div>
             <a href="https://help.github.com/articles/github-privacy-statement/" target="_blank">
               Lesen Sie mehr über die Datenschutzerklärung von Github.
-            </a>{' '}
-          </p>
-          <p>
-            Der Quell-Code der Website ist frei auf Github einsehbar{' '}
-            <a href="https://github.com/firsttris/teufel-it-gatsby" target="_blank">
-              teufel-it-gatsby
             </a>
-          </p>
-          <p>Zur Optimierung und Analyse unseres Angebots setzen wir den Dienst „Google Analytics“ von Google ein.</p>
+          </div>
+          <div>
+            Zur Optimierung und Analyse unseres Angebots setzen wir den Dienst „Google Analytics“ von Google ein.
+          </div>
         </div>
         <div className="mt-4">
           <h4>Verwendung von Google Analytics</h4>
@@ -126,7 +128,9 @@ const Privacy = (props: InjectedIntlProps) => (
         </div>
         <div className="mt-4">
           <h4>Ihre Rechte auf Auskunft, Berichtigung, Sperre, Löschung und Widerspruch</h4>
-          <p>Der Seitenbereiber speichert keine personenbezogenen Daten.</p>
+          <p>
+            Kontaktieren Sie <a href="mailto:info@teufel-it.de">info@teufel-it.de</a> mit Ihrem Anliegen.
+          </p>
         </div>
         <div className="mt-4">
           <h4>Änderung unserer Datenschutzbestimmungen</h4>

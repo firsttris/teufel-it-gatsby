@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { getCurrentLanguage, getTranslatedLabel } from './../../translations/provider';
-import LinkItem from './LinkItem';
+import { getTranslatedLabel } from './../../translations/provider';
+import { LinkItem } from './LinkItem';
 import './Navigation.css';
 
 const Paper = require('../../assets/images/backgrounds/paper.png');
@@ -22,6 +22,7 @@ const ulStyle: React.CSSProperties = {
 
 interface Props {
   location: any;
+  locale: string;
 }
 
 interface State {
@@ -56,12 +57,14 @@ export class Navigation extends React.Component<Props, State> {
   };
 
   render(): JSX.Element {
-    const locale = getCurrentLanguage();
     const navItems = [
-      { path: `/${locale}/`, name: getTranslatedLabel('NAVIGATION_DEVELOPMENT') },
-      { path: `/${locale}/Consulting`, name: getTranslatedLabel('NAVIGATION_CONSULTING') },
-      { path: `/${locale}/Github`, name: getTranslatedLabel('NAVIGATION_PROJECTS') },
-      { path: `/${locale}/SendToKodi`, name: getTranslatedLabel('NAVIGATION_SENDTOKODI') }
+      { path: `/${this.props.locale}/`, name: getTranslatedLabel('NAVIGATION_DEVELOPMENT', this.props.locale) },
+      {
+        path: `/${this.props.locale}/Consulting`,
+        name: getTranslatedLabel('NAVIGATION_CONSULTING', this.props.locale)
+      },
+      { path: `/${this.props.locale}/Github`, name: getTranslatedLabel('NAVIGATION_PROJECTS', this.props.locale) },
+      { path: `/${this.props.locale}/SendToKodi`, name: getTranslatedLabel('NAVIGATION_SENDTOKODI', this.props.locale) }
     ];
 
     return (

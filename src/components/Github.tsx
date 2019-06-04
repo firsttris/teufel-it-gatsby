@@ -1,17 +1,19 @@
 import * as React from 'react';
-import Contact from './Contact';
-import FullImage from './FullImage';
-import GithubItem from './GithubItem';
-import Header from './Header';
-import Impressum from './Impressum';
-import SectionHeaderWithSubRow from './SectionHeaderWithSubRow';
+import { Contact } from './Contact';
+import { FullImage } from './FullImage';
+import { GithubItem } from './GithubItem';
+import { Header } from './Header';
+import { Impressum } from './Impressum';
+import { SectionHeaderWithSubRow } from './SectionHeaderWithSubRow';
 
 const Lines = require('./../assets/images/backgrounds/lines.png');
 const OldComputer = require('./../assets/images/code.jpg');
 
 const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` };
 
-interface Props {}
+interface Props {
+  locale: string;
+}
 
 interface State {
   searchInput: string;
@@ -19,7 +21,7 @@ interface State {
   repositories: any[];
 }
 
-class Github extends React.Component<Props, State> {
+export class Github extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -65,10 +67,10 @@ class Github extends React.Component<Props, State> {
       <div className="container-fluid" style={containerStyle}>
         <div className="text-center">
           <FullImage image={OldComputer} height="550px" />
-          <Header />
+          <Header locale={this.props.locale} />
         </div>
         <div className="container">
-          <SectionHeaderWithSubRow title="NAVIGATION_PROJECTS" text="GITHUB_SUBTITLE" />
+          <SectionHeaderWithSubRow title="NAVIGATION_PROJECTS" text="GITHUB_SUBTITLE" locale={this.props.locale} />
           <div className="form-group pt-3">
             <div className="input-group">
               <input
@@ -93,11 +95,9 @@ class Github extends React.Component<Props, State> {
             ))}
           </div>
         </div>
-        <Contact />
-        <Impressum />
+        <Contact locale={this.props.locale} />
+        <Impressum locale={this.props.locale} />
       </div>
     );
   }
 }
-
-export default Github;

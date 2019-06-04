@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { getCurrentLanguage, getTranslatedLabel } from './../translations/provider';
-import Contact from './Contact';
-import Impressum from './Impressum';
+import { Contact } from './Contact';
+import { Impressum } from './Impressum';
 
 const Lines = require('./../assets/images/backgrounds/lines.png');
 const SendToKodiScreen1 = require('./../assets/images/SendToKodi/1.jpg');
@@ -20,6 +20,7 @@ const imgStyle: React.CSSProperties = {
 const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` };
 
 interface Props {
+  locale: string;
 }
 
 interface State {
@@ -90,9 +91,11 @@ class SendToKodi extends React.Component<Props, State> {
           </div>
           <div className="row mt-4">
             <div className="col">
-              <h3>{getTranslatedLabel('SENDTOKODI_DESCRIPTION_LABEL')}</h3>
+              <h3>{getTranslatedLabel('SENDTOKODI_DESCRIPTION_LABEL', this.props.locale)}</h3>
               <div className="row py-3">
-                <div className="col-xs-12 col-md-12 col-lg-6">{getTranslatedLabel('SENDTOKODI_DESCRIPTION')}</div>
+                <div className="col-xs-12 col-md-12 col-lg-6">
+                  {getTranslatedLabel('SENDTOKODI_DESCRIPTION', this.props.locale)}
+                </div>
               </div>
             </div>
           </div>
@@ -126,7 +129,7 @@ class SendToKodi extends React.Component<Props, State> {
           </div>
           <div className="row mt-4">
             <div className="col">
-              <h5>{getTranslatedLabel('SENDTOKODI_SUPPORTED_ADDONS_LABEL')}</h5>
+              <h5>{getTranslatedLabel('SENDTOKODI_SUPPORTED_ADDONS_LABEL', this.props.locale)}</h5>
               <ul className="py-3">
                 <li>Youtube</li>
                 <li>Soundcloud</li>
@@ -134,7 +137,7 @@ class SendToKodi extends React.Component<Props, State> {
                 <li>Twitch</li>
                 <li>Mixcloud</li>
               </ul>
-              <h5>{getTranslatedLabel('SENDTOKODI_SCREENSHOTS_LABEL')}</h5>
+              <h5>{getTranslatedLabel('SENDTOKODI_SCREENSHOTS_LABEL', this.props.locale)}</h5>
             </div>
           </div>
           <div className="row">
@@ -153,7 +156,7 @@ class SendToKodi extends React.Component<Props, State> {
           </div>
           <div className="row mt-4">
             <div className="col">
-              <h5 className="py-3">{getTranslatedLabel('SENDTOKODI_REVIEWS')}</h5>
+              <h5 className="py-3">{getTranslatedLabel('SENDTOKODI_REVIEWS', this.props.locale)}</h5>
               {this.state.reviews.map((review, ri) => (
                 <div key={ri}>
                   <div>
@@ -171,8 +174,8 @@ class SendToKodi extends React.Component<Props, State> {
             </div>
           </div>
         </div>
-        <Contact />
-        <Impressum />
+        <Contact locale={this.props.locale} />
+        <Impressum locale={this.props.locale} />
       </div>
     );
   }

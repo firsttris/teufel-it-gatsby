@@ -1,9 +1,17 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import Github from './../components/Github';
+import { Github } from './../components/Github';
+import { Layout } from './../layouts/Layout';
 
-export default () => (
-  <div className="page">
-    <Github />
-  </div>
+interface Props {
+  location: Location;
+  pageContext: {
+    data: any;
+    locale: string;
+  };
+}
+
+export default (props: Props) => (
+  <Layout location={props.location} locale={props.pageContext.locale}>
+    <Github locale={props.pageContext.locale} />
+  </Layout>
 );

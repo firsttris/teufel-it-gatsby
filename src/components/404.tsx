@@ -1,6 +1,6 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import * as React from 'react';
-import { getTranslatedLabel, getCurrentLanguage } from './../translations/provider'
+import { getCurrentLanguage, getTranslatedLabel } from './../translations/provider';
 
 const Lines = require('../assets/images/backgrounds/lines.png');
 const Unicorn = require('../assets/images/NotFound/unicorn-small.png');
@@ -17,17 +17,16 @@ const containerStyle: React.CSSProperties = {
 const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px', height: '200px' };
 const spacerStyle: React.CSSProperties = { height: '80px' };
 
-const NotFound = (props: {}) => (
+export const NotFound = (props: { locale: string }) => (
   <div style={containerStyle}>
     <img src={Unicorn} alt="Not Found" style={imageStyle} />
-    <h2>{getTranslatedLabel("ERROR_TEXT")}</h2>
-    <div>{getTranslatedLabel("ERROR_NOT_FOUND")}</div>
-    <div>{getTranslatedLabel("ERROR_CONTACT_US")}</div>
+    <h2>{getTranslatedLabel('ERROR_TEXT', props.locale)}</h2>
+    <div>{getTranslatedLabel('ERROR_NOT_FOUND', props.locale)}</div>
+    <div>{getTranslatedLabel('ERROR_CONTACT_US', props.locale)}</div>
     <div>
       <div className="spacer" style={spacerStyle} />
       <div>
-        <b>{getTranslatedLabel("CONTACT_TITLE")}
-        </b>
+        <b>{getTranslatedLabel('CONTACT_TITLE', props.locale)}</b>
       </div>
       <div>
         <a href="https://www.teufel-it.de">www.teufel-it.de</a>
@@ -37,10 +36,8 @@ const NotFound = (props: {}) => (
       </div>
       <br />
       <Link to={`/${getCurrentLanguage()}/`} className="btn btn-dark">
-        {getTranslatedLabel("ERROR_START")}
+        {getTranslatedLabel('ERROR_START', props.locale)}
       </Link>
     </div>
   </div>
 );
-
-export default NotFound;

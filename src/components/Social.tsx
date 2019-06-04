@@ -12,7 +12,7 @@ const aStyle: React.CSSProperties = {
   textDecoration: 'none'
 };
 
-export default (props: Props) => (
+export const Social = (props: Props) => (
   <a className="btn btn-outline-dark" style={aStyle} target="_blank" rel="noopener noreferrer" href={props.url}>
     <i className={classNames('fa-2x', props.icon)} aria-hidden="true" />
   </a>

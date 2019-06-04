@@ -22,7 +22,7 @@ interface State {
   hover: boolean;
 }
 
-export default class LinkItem extends React.Component<Props, State> {
+export class LinkItem extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {

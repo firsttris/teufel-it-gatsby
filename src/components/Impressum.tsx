@@ -12,41 +12,35 @@ const blackBackgroundStyle: React.CSSProperties = {
 const textStyle: React.CSSProperties = { color: 'white' };
 const fontSizeMedium: React.CSSProperties = { fontSize: 'medium' };
 
-export default () => (
+export const Impressum = (props: { locale: string }) => (
   <div className="row" style={blackBackgroundStyle}>
     <div className="container py-3">
       <p>© 2018 Teufel-IT</p>
       <div className="row">
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
-          <div style={fontSizeMedium}>
-            {getTranslatedLabel('OWNER')}
-          </div>
+          <div style={fontSizeMedium}>{getTranslatedLabel('OWNER', props.locale)}</div>
           <br />
           <div>Tristan Teufel</div>
           <div>Werkstr.10a</div>
           <div>D-77815 Bühl</div>
         </div>
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
-          <div style={fontSizeMedium}>
-          {getTranslatedLabel('SOURCE_CODE')}
-          </div>
+          <div style={fontSizeMedium}>{getTranslatedLabel('SOURCE_CODE', props.locale)}</div>
           <br />
           <div>
             <a
               style={textStyle}
-              href="https://github.com/firsttris/teufel-it-react"
+              href="https://github.com/firsttris/teufel-it-gatsby"
               rel="noopener noreferrer"
               target="_blank"
             >
-            {getTranslatedLabel('GITHUB_PAGE_LINK')}
+              {getTranslatedLabel('GITHUB_PAGE_LINK', props.locale)}
               <i className="fab fa-github" aria-hidden="true" />
             </a>
           </div>
         </div>
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
-          <div style={fontSizeMedium}>
-          {getTranslatedLabel('SOURCE_FOR_IMAGES')}
-          </div>
+          <div style={fontSizeMedium}>{getTranslatedLabel('SOURCE_FOR_IMAGES', props.locale)}</div>
           <br />
           <div>
             <a href="http://unsplash.com" style={textStyle} target="_blank" rel="noopener noreferrer">
@@ -65,9 +59,7 @@ export default () => (
           </div>
         </div>
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
-          <div style={fontSizeMedium}>
-          {getTranslatedLabel('CONTACT_TITLE')}
-          </div>
+          <div style={fontSizeMedium}>{getTranslatedLabel('CONTACT_TITLE', props.locale)}</div>
           <br />
           <div>
             <a href="tel:+4917645744166" style={textStyle}>

@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import NotFound from './../components/404';
+import { NotFound } from './../components/404';
+import { Layout } from './../layouts/Layout';
 
-export default () => (
-  <div className="page">
-    <NotFound />
-  </div>
+interface Props {
+  location: Location;
+  pageContext: { locale: string; data: any };
+}
+
+export default (props: Props) => (
+  <Layout location={props.location} locale={props.pageContext.locale}>
+    <NotFound locale={props.pageContext.locale} />
+  </Layout>
 );

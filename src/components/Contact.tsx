@@ -1,14 +1,14 @@
 import * as React from 'react';
-import SectionHeader from './SectionHeader';
-import Social from './Social';
+import { SectionHeader } from './SectionHeader';
+import { Social } from './Social';
 
 const spanStyle: React.CSSProperties = { fontSize: '30px', letterSpacing: '10px' };
 
-export default () => (
+export const Contact = (props: { locale: string }) => (
   <div className="row py-3 text-center">
     <div className="col">
       <span className="text-uppercase" style={spanStyle}>
-        <SectionHeader title="CONTACT_TITLE" />
+        <SectionHeader title="CONTACT_TITLE" locale={props.locale} />
       </span>
       <div>
         <Social icon="fas fa-phone" url="tel:+49 176 45744166" />

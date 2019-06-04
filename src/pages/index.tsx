@@ -6,18 +6,24 @@ const navigateTo = (locale: string) => {
 };
 
 export default (): any => {
-  /*
   if (typeof location !== 'undefined') {
-    const homeUrl = withPrefix(`/${navigator.language.split('-')[0]}/`);
-    location.replace(homeUrl);
+    let locale = 'en';
+    if (navigator.language.includes('de')) {
+      locale = 'de';
+    }
+    navigateTo(locale);
   }
-  
+
+  /*
+  return null;
+    */
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
       <div className="fas fa-5x fa-spinner fa-spin" style={{ color: 'Red', margin: 'auto 0' }} />
     </div>
   );
-  */
+
+  /* 
   const aStyle: React.CSSProperties = {
     margin: '10px',
     color: '#f00',
@@ -36,4 +42,5 @@ export default (): any => {
       </a>
     </div>
   );
+  */
 };

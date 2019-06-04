@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import Privacy from './../components/Privacy';
+import { Privacy } from './../components/Privacy';
+import { Layout } from './../layouts/Layout';
 
-export default () => (
-  <div className="page">
-    <Privacy />
-  </div>
+interface Props {
+  location: Location;
+  pageContext: { locale: string };
+}
+
+export default (props: Props) => (
+  <Layout location={props.location} locale={props.pageContext.locale}>
+    <Privacy locale={props.pageContext.locale} />
+  </Layout>
 );

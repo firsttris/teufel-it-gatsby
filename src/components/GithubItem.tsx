@@ -7,7 +7,7 @@ interface Props {
   repo: any;
 }
 
-export default (props: Props) => (
+export const GithubItem = (props: Props) => (
   <div>
     <a
       href={props.repo.html_url}

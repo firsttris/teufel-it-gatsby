@@ -12,7 +12,7 @@ const containerStyle: React.CSSProperties = {
 const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px', height: '200px' };
 const spacerStyle: React.CSSProperties = { height: '80px' };
 
-const Privacy = (props: {}) => (
+export const Privacy = (props: { locale: string }) => (
   <div style={containerStyle}>
     <div className="container">
       <div className="row">
@@ -40,7 +40,8 @@ const Privacy = (props: {}) => (
             Der Quell-Code der Website ist frei auf Github{' '}
             <a href="https://github.com/firsttris/teufel-it-gatsby" target="_blank">
               einsehbar
-            </a>.
+            </a>
+            .
           </div>
           <div>
             Die Website ist bei Github gehostet. Github erstellt keine Zugriffsdaten die für den Seitenbereiber
@@ -143,5 +144,3 @@ const Privacy = (props: {}) => (
     </div>
   </div>
 );
-
-export default Privacy;

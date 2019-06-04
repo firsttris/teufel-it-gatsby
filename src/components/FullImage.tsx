@@ -16,7 +16,7 @@ const fullImageStyle: React.CSSProperties = {
   minHeight: '400px'
 };
 
-export default class FullImage extends React.Component<Props, State> {
+export class FullImage extends React.Component<Props, State> {
   match: MediaQueryList;
   ieHack: MediaQueryList;
 
@@ -37,7 +37,7 @@ export default class FullImage extends React.Component<Props, State> {
     this.ieHack.removeListener(this.setToScroll);
   }
 
-  setToScroll = (mql: MediaQueryList) => {
+  setToScroll = (mql: MediaQueryList, ev: MediaQueryListEvent): any => {
     fullImageStyle.backgroundAttachment = mql.matches ? 'scroll' : 'fixed';
     this.forceUpdate();
   };

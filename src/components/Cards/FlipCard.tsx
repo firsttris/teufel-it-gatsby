@@ -6,6 +6,7 @@ interface Props {
   class: string;
   icon: string;
   title: string;
+  locale: string;
   text: string;
 }
 
@@ -13,7 +14,7 @@ interface State {
   flipped: boolean;
 }
 
-class FlipCard extends React.Component<Props, State> {
+export class FlipCard extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -53,7 +54,7 @@ class FlipCard extends React.Component<Props, State> {
           <div className="cards">
             <i className={this.props.icon} aria-hidden="true" style={{ fontSize: '10em', color: '#f00' }} />
             <div className="text-uppercase" style={{ fontSize: '1.5em' }}>
-            {getTranslatedLabel(this.props.title)}
+              {getTranslatedLabel(this.props.title, this.props.locale)}
             </div>
           </div>
           <div className="cards" style={{ transform: 'rotateY(180deg)' }}>
@@ -69,7 +70,7 @@ class FlipCard extends React.Component<Props, State> {
                 alignItems: 'center'
               }}
             >
-              {getTranslatedLabel(this.props.text)}
+              {getTranslatedLabel(this.props.text, this.props.locale)}
             </div>
           </div>
         </div>
@@ -77,5 +78,3 @@ class FlipCard extends React.Component<Props, State> {
     );
   }
 }
-
-export default FlipCard;

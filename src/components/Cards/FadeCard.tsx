@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { getTranslatedLabel } from './../../translations/provider'
+import { getTranslatedLabel } from './../../translations/provider';
 
 interface Props {
   icon: string;
   title: string;
+  locale: string;
   text: string;
 }
 
@@ -21,7 +22,7 @@ const spanStyle: React.CSSProperties = {
   fontSize: '20px'
 };
 
-export default class FadeCard extends React.Component<Props, State> {
+export class FadeCard extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -56,12 +57,10 @@ export default class FadeCard extends React.Component<Props, State> {
             <i className={this.props.icon} />
           </span>
           <span className="text-uppercase" style={spanStyle}>
-            {getTranslatedLabel(this.props.title)}
+            {getTranslatedLabel(this.props.title, this.props.locale)}
           </span>
         </div>
-        <p>
-          {getTranslatedLabel(this.props.text)}
-        </p>
+        <p>{getTranslatedLabel(this.props.text, this.props.locale)}</p>
       </div>
     );
   }

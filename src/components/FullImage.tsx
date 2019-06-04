@@ -17,31 +17,6 @@ const fullImageStyle: React.CSSProperties = {
 };
 
 export class FullImage extends React.Component<Props, State> {
-  match: MediaQueryList;
-  ieHack: MediaQueryList;
-
-  constructor(props: Props) {
-    super(props);
-  }
-
-  componentDidMount() {
-    this.match = window.matchMedia('(max-width: 575px)');
-    this.ieHack = window.matchMedia('all and (-ms-high-contrast: none), (-ms-high-contrast: active)');
-    this.match.addListener(this.setToScroll);
-    this.ieHack.addListener(this.setToScroll);
-    fullImageStyle.backgroundAttachment = window.innerWidth < 575 ? 'scroll' : 'fixed';
-  }
-
-  componentWillUnmount() {
-    this.match.removeListener(this.setToScroll);
-    this.ieHack.removeListener(this.setToScroll);
-  }
-
-  setToScroll = (mql: MediaQueryList, ev: MediaQueryListEvent): any => {
-    fullImageStyle.backgroundAttachment = mql.matches ? 'scroll' : 'fixed';
-    this.forceUpdate();
-  };
-
   render() {
     return (
       <div className="row">

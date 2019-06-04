@@ -53,7 +53,7 @@ export class FlipCard extends React.Component<Props, State> {
         <div style={flipStyle}>
           <div className="cards">
             <i className={this.props.icon} aria-hidden="true" style={{ fontSize: '10em', color: '#f00' }} />
-            <div className="text-uppercase" style={{ fontSize: '1.5em' }}>
+            <div className="text-uppercase pt-2" style={{ fontSize: '1.5em' }}>
               {getTranslatedLabel(this.props.title, this.props.locale)}
             </div>
           </div>

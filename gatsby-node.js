@@ -116,10 +116,8 @@ const consulting = {
 };
 
 exports.createPages = async ({ page, actions }) => {
-  const data = await fetch('https://api.github.com/users/firsttris/repos');
-  const result = await data.json();
-  const repos = result.filter(repository => repository.fork === false);
-  repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+  const repos = await fetchGithubData();
+  const reviews = await fetchReviews();
 
   const { createPage } = actions;
 
@@ -127,7 +125,7 @@ exports.createPages = async ({ page, actions }) => {
     { path: '/', name: 'Development', data: development },
     { path: '/Consulting', name: 'Consulting', data: consulting },
     { path: '/Github', name: 'Github', data: repos },
-    { path: '/SendToKodi', name: 'SendToKodi' },
+    { path: '/SendToKodi', name: 'SendToKodi', data: reviews },
     { path: '/404', name: '404' },
     { path: '/Privacy', name: 'Privacy' }
   ];
@@ -144,3 +142,44 @@ exports.createPages = async ({ page, actions }) => {
     });
   });
 };
+
+async function fetchGithubData() {
+  const data = await fetch('https://api.github.com/users/firsttris/repos');
+  const result = await data.json();
+  const repos = result.filter(repository => repository.fork === false);
+  repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+  return repos;
+}
+
+async function fetchReview(country) {
+  const reviews = [];
+  return fetch(
+    'https://itunes.apple.com/' + country + '/rss/customerreviews/id=1113517603/sortBy=mostRecent/json'
+  ).then(data =>
+    data.json().then(result => {
+      const entries = result.feed.entry;
+      for (const index in entries) {
+        if (entries[index].author && !entries[index]['im:artist']) {
+          const review = {
+            name: entries[index].author ? entries[index].author.name.label : '',
+            text: entries[index].content ? entries[index].content.label : '',
+            rating: entries[index]['im:rating'] ? entries[index]['im:rating'].label : '',
+            title: entries[index].title ? entries[index].title.label : ''
+          };
+          reviews.push(review);
+        }
+      }
+      return reviews;
+    })
+  );
+}
+
+async function fetchReviews() {
+  let reviews = [];
+  const countries = ['de', 'us', 'gb', 'nl', 'ro', 'fr'];
+  for (const country of countries) {
+    const fetchReviews = await fetchReview(country);
+    reviews = reviews.concat(fetchReviews);
+  }
+  return reviews;
+}

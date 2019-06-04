@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { getCurrentLanguage, getTranslatedLabel } from './../translations/provider';
+import { getTranslatedLabel } from './../translations/provider';
 
 const Lines = require('../assets/images/backgrounds/lines.png');
 const Unicorn = require('../assets/images/NotFound/unicorn-small.png');
@@ -35,7 +35,7 @@ export const NotFound = (props: { locale: string }) => (
         <a href="mailto:info@teufel-it.de">info@teufel-it.de</a>
       </div>
       <br />
-      <Link to={`/${getCurrentLanguage()}/`} className="btn btn-dark">
+      <Link to={`/${props.locale}/`} className="btn btn-dark">
         {getTranslatedLabel('ERROR_START', props.locale)}
       </Link>
     </div>

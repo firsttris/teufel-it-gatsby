@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { getCurrentLanguage, getTranslatedLabel } from './../translations/provider';
+import { getTranslatedLabel } from './../translations/provider';
 import { Contact } from './Contact';
 import { Impressum } from './Impressum';
 
@@ -21,61 +21,13 @@ const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` }
 
 interface Props {
   locale: string;
-}
-
-interface State {
   reviews: any[];
 }
 
-class SendToKodi extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      reviews: []
-    };
-  }
+interface State {}
 
-  componentDidMount() {
-    setTimeout(() => this.callService(), 1000);
-  }
-
-  callService() {
-    const countries = ['de', 'us', 'gb', 'nl', 'ro', 'fr'];
-    for (const index in countries) {
-      if (countries[index]) {
-        this.requestReview(countries[index]);
-      }
-    }
-  }
-
-  requestReview(country: string) {
-    fetch('https://itunes.apple.com/' + country + '/rss/customerreviews/id=1113517603/sortBy=mostRecent/json')
-      .then(data =>
-        data.json().then((result: any) => {
-          const entries = result.feed.entry;
-          for (const index in entries) {
-            if (!entries[index]['im:artist']) {
-              const review = {
-                name: entries[index].author.name.label,
-                text: entries[index].content.label,
-                rating: entries[index]['im:rating'].label,
-                title: entries[index].title.label
-              };
-              const reviews = this.state.reviews.slice();
-              reviews.push(review);
-              this.setState({ reviews });
-            }
-          }
-        })
-      )
-      .catch(error => {
-        console.error(error); // tslint:disable-line
-      });
-  }
-
+export class SendToKodi extends React.Component<Props, State> {
   render() {
-    const locale = getCurrentLanguage();
-
     return (
       <div className="container-fluid" style={containerStyle}>
         <div style={{ height: '75px' }} />
@@ -102,7 +54,7 @@ class SendToKodi extends React.Component<Props, State> {
           <div className="row">
             <div className="col">
               <a
-                href={'https://itunes.apple.com/' + locale + '/app/sendtokodi/id1113517603'}
+                href={'https://itunes.apple.com/' + this.props.locale + '/app/sendtokodi/id1113517603'}
                 className="btn btn-primary mt-1"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -157,7 +109,7 @@ class SendToKodi extends React.Component<Props, State> {
           <div className="row mt-4">
             <div className="col">
               <h5 className="py-3">{getTranslatedLabel('SENDTOKODI_REVIEWS', this.props.locale)}</h5>
-              {this.state.reviews.map((review, ri) => (
+              {this.props.reviews.map((review, ri) => (
                 <div key={ri}>
                   <div>
                     <b>{review.title}</b>
@@ -180,5 +132,3 @@ class SendToKodi extends React.Component<Props, State> {
     );
   }
 }
-
-export default SendToKodi;

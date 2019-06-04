@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { getTranslatedLabel } from './../translations/provider';
 
 const Lines = require('../assets/images/backgrounds/lines.png');
-const Unicorn = require('../assets/images/NotFound/unicorn-small.png');
 
 const containerStyle: React.CSSProperties = {
   backgroundImage: `url(${Lines})`,
@@ -9,52 +9,40 @@ const containerStyle: React.CSSProperties = {
   width: '100%',
   paddingTop: '100px'
 };
-const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px', height: '200px' };
-const spacerStyle: React.CSSProperties = { height: '80px' };
 
 export const Privacy = (props: { locale: string }) => (
   <div style={containerStyle}>
     <div className="container">
       <div className="row">
         <div className="w-100">
-          <h3>Datenschutzerklärung</h3>
+          <h3>{getTranslatedLabel('PRIVACYPOLICY', props.locale)}</h3>
         </div>
         <div className="mt-4">
-          <h4>Allgemeine Angaben</h4>
+          <h4>{getTranslatedLabel('GENERAL_INFORMATION', props.locale)}</h4>
           <div>Tristan Teufel</div>
           <div>Werkstr.10</div>
           <div>D-77815 Bühl</div>
           <div>E-Mail: info@teufel-it.de</div>
         </div>
         <div className="mt-4">
-          <h4>Grundlegendes</h4>
-          <p>
-            Diese Datenschutzerklärung soll die Nutzer dieser Website über die Art, den Umfang und den Zweck der
-            Erhebung und Verwendung personenbezogener Daten durch den Webseitenbetreiber informieren.
-          </p>
+          <h4>{getTranslatedLabel('PRIVACY_FUNDAMENTALS', props.locale)}</h4>
+          <p>{getTranslatedLabel('PRIVACY_FUNDAMENTALS_TEXT', props.locale)}</p>
         </div>
         <div className="mt-4">
-          <h4>Zugriffsdaten</h4>
-          <div>Die Website selbst speichert keine Zugriffsdaten. </div>
+          <h4>{getTranslatedLabel('PRIVACY_ACCESS_DATA', props.locale)}</h4>
+          <div>{getTranslatedLabel('PRIVACY_DOES_NOT_SAVE_ACCESS_DATA', props.locale)}</div>
           <div>
-            Der Quell-Code der Website ist frei auf Github{' '}
             <a href="https://github.com/firsttris/teufel-it-gatsby" target="_blank">
-              einsehbar
+              {getTranslatedLabel('PRIVACY_CHECK_SOURCE_CODE_ON_GITHUB', props.locale)}
             </a>
-            .
           </div>
-          <div>
-            Die Website ist bei Github gehostet. Github erstellt keine Zugriffsdaten die für den Seitenbereiber
-            zugänglich sind.
-          </div>
+          <div>{getTranslatedLabel('PRIVACY_WEBSITE_HOSTED_ON_GITHUB', props.locale)}</div>
           <div>
             <a href="https://help.github.com/articles/github-privacy-statement/" target="_blank">
-              Lesen Sie mehr über die Datenschutzerklärung von Github.
+              {getTranslatedLabel('PRIVACY_READ_ABOUT_PRIVACY_OF_GITUHB', props.locale)}
             </a>
           </div>
-          <div>
-            Zur Optimierung und Analyse unseres Angebots setzen wir den Dienst „Google Analytics“ von Google ein.
-          </div>
+          <div>{getTranslatedLabel('PRIVACY_WE_USE_GOOGLE_ANALYTICS', props.locale)}</div>
         </div>
         <div className="mt-4">
           <h4>Verwendung von Google Analytics</h4>

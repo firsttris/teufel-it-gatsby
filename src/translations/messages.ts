@@ -1,5 +1,14 @@
 export const messages: any = {
   de: {
+    PRIVACY_ACCESS_DATA: 'Zugriffsdaten',
+    PRIVACY_DOES_NOT_SAVE_ACCESS_DATA: 'Die Website selbst speichert keine Zugriffsdaten.',
+    PRIVACY_CHECK_SOURCE_CODE_ON_GITHUB: 'Der Quell-Code der Website ist frei auf Github einsehbar.',
+    PRIVACY_WEBSITE_HOSTED_ON_GITHUB:
+      'Die Website ist bei Github gehostet. Github erstellt keine Zugriffsdaten die für den Seitenbereiber \
+    zugänglich sind.',
+    PRIVACY_READ_ABOUT_PRIVACY_OF_GITUHB: 'Lesen Sie mehr über die Datenschutzerklärung von Github.',
+    PRIVACY_WE_USE_GOOGLE_ANALYTICS:
+      'Zur Optimierung und Analyse unseres Angebots setzen wir den Dienst „Google Analytics“ von Google ein.',
     HEADER_TITLE: '[ teufel it ]',
     HEADER_SUBTITLE: 'Software ist mein Handwerk',
     CONTACT_TITLE: 'Kontakt',
@@ -8,6 +17,11 @@ export const messages: any = {
     ERROR_NOT_FOUND: 'Seite nicht gefunden, versuchen Sie die Seite neu zu laden',
     ERROR_CONTACT_US: 'Wenn das Problem weiterhin besteht, kontaktieren Sie uns',
     ERROR_START: 'Start',
+    PRIVACY_FUNDAMENTALS: 'Grundlegendes',
+    PRIVACY_FUNDAMENTALS_TEXT:
+      'Diese Datenschutzerklärung soll die Nutzer dieser Website über die Art, den Umfang und den Zweck der \
+    Erhebung und Verwendung personenbezogener Daten durch den Webseitenbetreiber informieren.',
+    GENERAL_INFORMATION: 'Allgemeine Angaben',
     PORTFOLIO_TITLE: 'Portfolio',
     TEXT_GOOD_PARTNER: 'Zuverlässiger Partner bei',
     PORTFOLIO_ANALYSIS_TITLE: 'Analyse',
@@ -45,6 +59,7 @@ export const messages: any = {
     PRINCIPLES_CC_TEXT: 'Prinzipien und Praktiken zu mehr Qualität',
     PRINCIPLES_AGILE_TITLE: 'agile',
     PRINCIPLES_AIGLE_TEXT: 'Lösen von komplexe Herausforderungen in Iterationen',
+    PRIVACYPOLICY: 'Datenschutzerklärung',
     OWNER: 'Inhaber',
     SOURCE_FOR_IMAGES: 'Quellen für Bilder & Fonts',
     BUILD_WITH: 'Build with ',
@@ -63,6 +78,13 @@ export const messages: any = {
       'Mit SendToKodi kannst du direkt aus verschiedenen Apps Links an die Kodi Addons senden. Öffne dazu einfach das Share Menü bei dem entsprechenden Video bzw. Lied und wähle aus den zur Verfügung stehenden Apps SendToKodi aus. Anschließend kannst du den Link dann an Kodi senden.'
   },
   en: {
+    PRIVACY_ACCESS_DATA: 'Access data',
+    PRIVACY_DOES_NOT_SAVE_ACCESS_DATA: 'The website itself does not store any access data.',
+    PRIVACY_CHECK_SOURCE_CODE_ON_GITHUB: 'The source code of the website is freely available on Github.',
+    PRIVACY_WEBSITE_HOSTED_ON_GITHUB:
+      'The website is hosted at Github. Github does not create access data accessible to the page server.',
+    PRIVACY_READ_ABOUT_PRIVACY_OF_GITUHB: 'Read more about the privacy policy of Github.',
+    PRIVACY_WE_USE_GOOGLE_ANALYTICS: 'To optimize and analyze our offer, we use Google\'s "Google Analytics" service.',
     HEADER_TITLE: '[ teufel it ]',
     HEADER_SUBTITLE: 'Software is my craft',
     CONTACT_TITLE: 'Contact',
@@ -71,6 +93,11 @@ export const messages: any = {
     ERROR_NOT_FOUND: 'Page not found, try refreshing',
     ERROR_CONTACT_US: 'If the problem persists feel free to contact us',
     ERROR_START: 'Start over',
+    PRIVACY_FUNDAMENTALS: 'Fundamentals',
+    PRIVACY_FUNDAMENTALS_TEXT:
+      'This privacy policy is intended to inform users of this website about the nature, scope and purpose of the website \
+    Inform the collection and use of personal data by the website operator.',
+    GENERAL_INFORMATION: 'General Information',
     PORTFOLIO_TITLE: 'Portfolio',
     TEXT_GOOD_PARTNER: 'A reliable partner',
     PORTFOLIO_ANALYSIS_TITLE: 'Analysis',
@@ -107,6 +134,7 @@ export const messages: any = {
     PRINCIPLES_CC_TEXT: 'Principles and practices to achieve more quality',
     PRINCIPLES_AGILE_TITLE: 'agile',
     PRINCIPLES_AIGLE_TEXT: 'Solve complex challenges in iterations',
+    PRIVACYPOLICY: 'Privacy Policy',
     OWNER: 'Owner',
     SOURCE_FOR_IMAGES: 'Sources for Pictures & Fonts',
     BUILD_WITH: 'Created with React',

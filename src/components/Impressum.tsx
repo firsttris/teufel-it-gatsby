@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
 import { getTranslatedLabel } from './../translations/provider';
 
@@ -15,7 +16,8 @@ const fontSizeMedium: React.CSSProperties = { fontSize: 'medium' };
 export const Impressum = (props: { locale: string }) => (
   <div className="row" style={blackBackgroundStyle}>
     <div className="container py-3">
-      <p>© 2018 Teufel-IT</p>
+      <div>© 2019 Teufel-IT</div>
+
       <div className="row">
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
           <div style={fontSizeMedium}>{getTranslatedLabel('OWNER', props.locale)}</div>
@@ -72,6 +74,9 @@ export const Impressum = (props: { locale: string }) => (
             </a>
           </div>
           <div>UST-ID DE304672147</div>
+          <Link to={`/${props.locale}/privacy/`} style={blackBackgroundStyle}>
+            {getTranslatedLabel('PRIVACYPOLICY', props.locale)}
+          </Link>
         </div>
       </div>
     </div>

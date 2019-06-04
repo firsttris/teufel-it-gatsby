@@ -123,11 +123,11 @@ exports.createPages = async ({ page, actions }) => {
 
   const router = [
     { path: '/', name: 'Development', data: development },
-    { path: '/Consulting', name: 'Consulting', data: consulting },
-    { path: '/Github', name: 'Github', data: repos },
-    { path: '/SendToKodi', name: 'SendToKodi', data: reviews },
+    { path: '/consulting', name: 'Consulting', data: consulting },
+    { path: '/github', name: 'Github', data: repos },
+    { path: '/sendtokodi', name: 'SendToKodi', data: reviews },
     { path: '/404', name: '404' },
-    { path: '/Privacy', name: 'Privacy' }
+    { path: '/privacy', name: 'Privacy' }
   ];
 
   const locales = ['de', 'en'];

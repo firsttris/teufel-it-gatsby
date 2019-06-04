@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
+import { getCurrentLanguage, getTranslatedLabel } from './../translations/provider';
 import Contact from './Contact';
 import Impressum from './Impressum';
 
@@ -19,7 +19,8 @@ const imgStyle: React.CSSProperties = {
 
 const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` };
 
-interface Props extends InjectedIntlProps {}
+interface Props {
+}
 
 interface State {
   reviews: any[];
@@ -72,6 +73,8 @@ class SendToKodi extends React.Component<Props, State> {
   }
 
   render() {
+    const locale = getCurrentLanguage();
+
     return (
       <div className="container-fluid" style={containerStyle}>
         <div style={{ height: '75px' }} />
@@ -87,20 +90,16 @@ class SendToKodi extends React.Component<Props, State> {
           </div>
           <div className="row mt-4">
             <div className="col">
-              <h3>
-                <FormattedMessage id="SENDTOKODI_DESCRIPTION_LABEL" />
-              </h3>
+              <h3>{getTranslatedLabel('SENDTOKODI_DESCRIPTION_LABEL')}</h3>
               <div className="row py-3">
-                <div className="col-xs-12 col-md-12 col-lg-6">
-                  <FormattedMessage id="SENDTOKODI_DESCRIPTION" />
-                </div>
+                <div className="col-xs-12 col-md-12 col-lg-6">{getTranslatedLabel('SENDTOKODI_DESCRIPTION')}</div>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col">
               <a
-                href={'https://itunes.apple.com/' + this.props.intl.locale + '/app/sendtokodi/id1113517603'}
+                href={'https://itunes.apple.com/' + locale + '/app/sendtokodi/id1113517603'}
                 className="btn btn-primary mt-1"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -127,9 +126,7 @@ class SendToKodi extends React.Component<Props, State> {
           </div>
           <div className="row mt-4">
             <div className="col">
-              <h5>
-                <FormattedMessage id="SENDTOKODI_SUPPORTED_ADDONS_LABEL" />
-              </h5>
+              <h5>{getTranslatedLabel('SENDTOKODI_SUPPORTED_ADDONS_LABEL')}</h5>
               <ul className="py-3">
                 <li>Youtube</li>
                 <li>Soundcloud</li>
@@ -137,9 +134,7 @@ class SendToKodi extends React.Component<Props, State> {
                 <li>Twitch</li>
                 <li>Mixcloud</li>
               </ul>
-              <h5>
-                <FormattedMessage id="SENDTOKODI_SCREENSHOTS_LABEL" />
-              </h5>
+              <h5>{getTranslatedLabel('SENDTOKODI_SCREENSHOTS_LABEL')}</h5>
             </div>
           </div>
           <div className="row">
@@ -158,9 +153,7 @@ class SendToKodi extends React.Component<Props, State> {
           </div>
           <div className="row mt-4">
             <div className="col">
-              <h5 className="py-3">
-                <FormattedMessage id="SENDTOKODI_REVIEWS" />
-              </h5>
+              <h5 className="py-3">{getTranslatedLabel('SENDTOKODI_REVIEWS')}</h5>
               {this.state.reviews.map((review, ri) => (
                 <div key={ri}>
                   <div>
@@ -185,4 +178,4 @@ class SendToKodi extends React.Component<Props, State> {
   }
 }
 
-export default injectIntl<{}>(SendToKodi);
+export default SendToKodi;

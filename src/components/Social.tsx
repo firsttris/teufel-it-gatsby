@@ -1,4 +1,4 @@
-import classNames = require('classnames');
+const classNames = require('classnames');
 import * as React from 'react';
 
 interface Props {

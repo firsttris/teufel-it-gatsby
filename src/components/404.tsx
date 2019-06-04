@@ -1,6 +1,6 @@
 import Link from 'gatsby-link';
 import * as React from 'react';
-import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
+import { getTranslatedLabel, getCurrentLanguage } from './../translations/provider'
 
 const Lines = require('../assets/images/backgrounds/lines.png');
 const Unicorn = require('../assets/images/NotFound/unicorn-small.png');
@@ -17,23 +17,16 @@ const containerStyle: React.CSSProperties = {
 const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px', height: '200px' };
 const spacerStyle: React.CSSProperties = { height: '80px' };
 
-const NotFound = (props: InjectedIntlProps) => (
+const NotFound = (props: {}) => (
   <div style={containerStyle}>
     <img src={Unicorn} alt="Not Found" style={imageStyle} />
-    <h2>
-      <FormattedMessage id="ERROR_TEXT" />
-    </h2>
-    <div>
-      <FormattedMessage id="ERROR_NOT_FOUND" />
-    </div>
-    <div>
-      <FormattedMessage id="ERROR_CONTACT_US" />
-    </div>
+    <h2>{getTranslatedLabel("ERROR_TEXT")}</h2>
+    <div>{getTranslatedLabel("ERROR_NOT_FOUND")}</div>
+    <div>{getTranslatedLabel("ERROR_CONTACT_US")}</div>
     <div>
       <div className="spacer" style={spacerStyle} />
       <div>
-        <b>
-          <FormattedMessage id="CONTACT_TITLE" />
+        <b>{getTranslatedLabel("CONTACT_TITLE")}
         </b>
       </div>
       <div>
@@ -43,11 +36,11 @@ const NotFound = (props: InjectedIntlProps) => (
         <a href="mailto:info@teufel-it.de">info@teufel-it.de</a>
       </div>
       <br />
-      <Link to={`/${props.intl.locale}/`} className="btn btn-dark">
-        <FormattedMessage id="ERROR_START" />
+      <Link to={`/${getCurrentLanguage()}/`} className="btn btn-dark">
+        {getTranslatedLabel("ERROR_START")}
       </Link>
     </div>
   </div>
 );
 
-export default injectIntl<{}>(NotFound);
+export default NotFound;

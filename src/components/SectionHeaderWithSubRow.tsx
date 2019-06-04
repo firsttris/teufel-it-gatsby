@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { getTranslatedLabel } from './../translations/provider';
 import SectionHeader from './SectionHeader';
 
 interface Props {
@@ -12,7 +12,7 @@ export default (props: Props) => (
   <div className="row py-3" style={props.style}>
     <div className="col">
       <SectionHeader title={props.title} />
-      {props.text ? <FormattedMessage id={props.text} /> : null}
+      {props.text ? getTranslatedLabel(props.text) : null}
     </div>
   </div>
 );

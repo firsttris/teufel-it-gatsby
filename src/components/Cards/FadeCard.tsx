@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { getTranslatedLabel } from './../../translations/provider'
 
 interface Props {
   icon: string;
@@ -56,11 +56,11 @@ export default class FadeCard extends React.Component<Props, State> {
             <i className={this.props.icon} />
           </span>
           <span className="text-uppercase" style={spanStyle}>
-            <FormattedMessage id={this.props.title} />
+            {getTranslatedLabel(this.props.title)}
           </span>
         </div>
         <p>
-          <FormattedMessage id={this.props.text} />
+          {getTranslatedLabel(this.props.text)}
         </p>
       </div>
     );

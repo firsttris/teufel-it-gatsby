@@ -1,6 +1,5 @@
-import { Location } from 'history';
 import * as React from 'react';
-import { InjectedIntl, injectIntl } from 'react-intl';
+import { getCurrentLanguage, getTranslatedLabel } from './../../translations/provider';
 import LinkItem from './LinkItem';
 import './Navigation.css';
 
@@ -22,9 +21,7 @@ const ulStyle: React.CSSProperties = {
 };
 
 interface Props {
-  intl: InjectedIntl;
-  location: Location;
-  onClick: (className: string) => void;
+  location: any;
 }
 
 interface State {
@@ -32,7 +29,7 @@ interface State {
   hideNav: boolean;
 }
 
-class Navigation extends React.Component<Props, State> {
+export class Navigation extends React.Component<Props, State> {
   prevIndex: number = 0;
   constructor(props: Props) {
     super(props);
@@ -48,8 +45,6 @@ class Navigation extends React.Component<Props, State> {
 
   onClick = (index: number, path: string): void => {
     this.setState({ currentPath: path, hideNav: true });
-    this.prevIndex > index ? this.props.onClick('pageSliderRight') : this.props.onClick('pageSliderLeft');
-    this.prevIndex = index;
   };
 
   toggleNavigation = (): void => {
@@ -61,11 +56,12 @@ class Navigation extends React.Component<Props, State> {
   };
 
   render(): JSX.Element {
+    const locale = getCurrentLanguage();
     const navItems = [
-      { path: `/${this.props.intl.locale}/`, name: this.props.intl.messages.NAVIGATION_DEVELOPMENT },
-      { path: `/${this.props.intl.locale}/Consulting`, name: this.props.intl.messages.NAVIGATION_CONSULTING },
-      { path: `/${this.props.intl.locale}/Github`, name: this.props.intl.messages.NAVIGATION_PROJECTS },
-      { path: `/${this.props.intl.locale}/SendToKodi`, name: this.props.intl.messages.NAVIGATION_SENDTOKODI }
+      { path: `/${locale}/`, name: getTranslatedLabel('NAVIGATION_DEVELOPMENT') },
+      { path: `/${locale}/Consulting`, name: getTranslatedLabel('NAVIGATION_CONSULTING') },
+      { path: `/${locale}/Github`, name: getTranslatedLabel('NAVIGATION_PROJECTS') },
+      { path: `/${locale}/SendToKodi`, name: getTranslatedLabel('NAVIGATION_SENDTOKODI') }
     ];
 
     return (
@@ -99,5 +95,3 @@ class Navigation extends React.Component<Props, State> {
     );
   }
 }
-
-export default injectIntl(Navigation);

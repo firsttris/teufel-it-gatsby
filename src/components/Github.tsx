@@ -88,7 +88,9 @@ class Github extends React.Component<Props, State> {
             </div>
           </div>
           <div className="list-group pb-3">
-            {this.state.filteredRepositories.map((repository, index) => <GithubItem key={index} repo={repository} />)}
+            {this.state.filteredRepositories.map((repository, index) => (
+              <GithubItem key={index} repo={repository} />
+            ))}
           </div>
         </div>
         <Contact />

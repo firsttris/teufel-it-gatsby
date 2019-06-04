@@ -1,6 +1,4 @@
-import Link from 'gatsby-link';
 import * as React from 'react';
-import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
 
 const Lines = require('../assets/images/backgrounds/lines.png');
 const Unicorn = require('../assets/images/NotFound/unicorn-small.png');
@@ -14,7 +12,7 @@ const containerStyle: React.CSSProperties = {
 const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px', height: '200px' };
 const spacerStyle: React.CSSProperties = { height: '80px' };
 
-const Privacy = (props: InjectedIntlProps) => (
+const Privacy = (props: {}) => (
   <div style={containerStyle}>
     <div className="container">
       <div className="row">
@@ -146,4 +144,4 @@ const Privacy = (props: InjectedIntlProps) => (
   </div>
 );
 
-export default injectIntl<{}>(Privacy);
+export default Privacy;

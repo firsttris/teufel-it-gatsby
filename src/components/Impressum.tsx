@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { getTranslatedLabel } from './../translations/provider';
 
 const Paper = require('./../assets/images/backgrounds/paper.png');
 
@@ -19,7 +19,7 @@ export default () => (
       <div className="row">
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
           <div style={fontSizeMedium}>
-            <FormattedMessage id="OWNER" />
+            {getTranslatedLabel('OWNER')}
           </div>
           <br />
           <div>Tristan Teufel</div>
@@ -28,7 +28,7 @@ export default () => (
         </div>
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
           <div style={fontSizeMedium}>
-            <FormattedMessage id="SOURCE_CODE" />
+          {getTranslatedLabel('SOURCE_CODE')}
           </div>
           <br />
           <div>
@@ -38,14 +38,14 @@ export default () => (
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FormattedMessage id="GITHUB_PAGE_LINK" />
+            {getTranslatedLabel('GITHUB_PAGE_LINK')}
               <i className="fab fa-github" aria-hidden="true" />
             </a>
           </div>
         </div>
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
           <div style={fontSizeMedium}>
-            <FormattedMessage id="SOURCE_FOR_IMAGES" />
+          {getTranslatedLabel('SOURCE_FOR_IMAGES')}
           </div>
           <br />
           <div>
@@ -66,7 +66,7 @@ export default () => (
         </div>
         <div className="col-xs-12 col-md-3 col-lg-3 py-3">
           <div style={fontSizeMedium}>
-            <FormattedMessage id="CONTACT_TITLE" />
+          {getTranslatedLabel('CONTACT_TITLE')}
           </div>
           <br />
           <div>

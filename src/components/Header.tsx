@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { getTranslatedLabel } from './../translations/provider';
 
 const rowStyle: React.CSSProperties = { position: 'absolute', top: '200px', width: '100%' };
 const bannerStyle: React.CSSProperties = { backgroundColor: '#4B4B4B', display: 'inline-block' };
@@ -11,10 +11,10 @@ export default (): JSX.Element => (
     <div className="col">
       <div className="p-3" style={bannerStyle}>
         <div style={headerStyle}>
-          <FormattedMessage id="HEADER_TITLE" />
+          {getTranslatedLabel('HEADER_TITLE')}
         </div>
         <div className="pt-3" style={subTitleStyle}>
-          <FormattedMessage id="HEADER_SUBTITLE" />
+          {getTranslatedLabel('HEADER_SUBTITLE')}
         </div>
       </div>
     </div>

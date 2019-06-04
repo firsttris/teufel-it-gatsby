@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { getTranslatedLabel } from './../../translations/provider';
 import './FlipCard.css';
 
 interface Props {
@@ -53,7 +53,7 @@ class FlipCard extends React.Component<Props, State> {
           <div className="cards">
             <i className={this.props.icon} aria-hidden="true" style={{ fontSize: '10em', color: '#f00' }} />
             <div className="text-uppercase" style={{ fontSize: '1.5em' }}>
-              <FormattedMessage id={this.props.title} />
+            {getTranslatedLabel(this.props.title)}
             </div>
           </div>
           <div className="cards" style={{ transform: 'rotateY(180deg)' }}>
@@ -69,7 +69,7 @@ class FlipCard extends React.Component<Props, State> {
                 alignItems: 'center'
               }}
             >
-              <FormattedMessage id={this.props.text} />
+              {getTranslatedLabel(this.props.text)}
             </div>
           </div>
         </div>

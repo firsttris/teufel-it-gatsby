@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { getTranslatedLabel } from './../translations/provider';
 
 interface Props {
   title: string;
@@ -9,6 +9,6 @@ const containerStyle: React.CSSProperties = { fontSize: '30px', letterSpacing: '
 
 export default (props: Props) => (
   <div className="text-uppercase" style={containerStyle}>
-    <FormattedMessage id={props.title} />
+    {getTranslatedLabel(props.title)}
   </div>
 );

@@ -1,0 +1,100 @@
+{
+  "assetsByChunkName": {
+    "component---src-templates-send-to-kodi-tsx": [
+      "component---src-templates-send-to-kodi-tsx-b01c773399982eb517ad.js",
+      "component---src-templates-send-to-kodi-tsx-b01c773399982eb517ad.js.map"
+    ],
+    "component---src-layouts-index-tsx": [
+      "component---src-layouts-index-tsx-bf41e6ea63b621bb8fa3.js",
+      "component---src-layouts-index-tsx-bf41e6ea63b621bb8fa3.js.map"
+    ],
+    "component---src-layouts-de-tsx": [
+      "component---src-layouts-de-tsx-2b790ba6af4366c553ca.js",
+      "component---src-layouts-de-tsx-2b790ba6af4366c553ca.js.map"
+    ],
+    "path---": [
+      "path----b399d76988b174ef99b1.js",
+      "path----b399d76988b174ef99b1.js.map"
+    ],
+    "path---en-consulting": [
+      "path---en-consulting-ad73801cfb2bcb1cb105.js",
+      "path---en-consulting-ad73801cfb2bcb1cb105.js.map"
+    ],
+    "path---en-github": [
+      "path---en-github-ad73801cfb2bcb1cb105.js",
+      "path---en-github-ad73801cfb2bcb1cb105.js.map"
+    ],
+    "path---en-404": [
+      "path---en-404-ad73801cfb2bcb1cb105.js",
+      "path---en-404-ad73801cfb2bcb1cb105.js.map"
+    ],
+    "path---de-send-to-kodi": [
+      "path---de-send-to-kodi-1552fa1dff3bc58b4bbf.js",
+      "path---de-send-to-kodi-1552fa1dff3bc58b4bbf.js.map"
+    ],
+    "path---index": [
+      "path---index-a0e39f21c11f6a62c5ab.js",
+      "path---index-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---de-404": [
+      "path---de-404-1552fa1dff3bc58b4bbf.js",
+      "path---de-404-1552fa1dff3bc58b4bbf.js.map"
+    ],
+    "component---src-templates-development-tsx": [
+      "component---src-templates-development-tsx-4df862f0ed3ca7f61c66.js",
+      "component---src-templates-development-tsx-4df862f0ed3ca7f61c66.js.map"
+    ],
+    "commons": [
+      "commons-a374a50ee73f86fb3bdd.js",
+      "build-js-styles.css",
+      "commons-a374a50ee73f86fb3bdd.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---de-consulting": [
+      "path---de-consulting-1552fa1dff3bc58b4bbf.js",
+      "path---de-consulting-1552fa1dff3bc58b4bbf.js.map"
+    ],
+    "component---src-templates-github-tsx": [
+      "component---src-templates-github-tsx-a943513438bf95096c78.js",
+      "component---src-templates-github-tsx-a943513438bf95096c78.js.map"
+    ],
+    "path---de-github": [
+      "path---de-github-1552fa1dff3bc58b4bbf.js",
+      "path---de-github-1552fa1dff3bc58b4bbf.js.map"
+    ],
+    "path---de": [
+      "path---de-1552fa1dff3bc58b4bbf.js",
+      "path---de-1552fa1dff3bc58b4bbf.js.map"
+    ],
+    "component---src-templates-consulting-tsx": [
+      "component---src-templates-consulting-tsx-3eb01406000c9ec2c340.js",
+      "component---src-templates-consulting-tsx-3eb01406000c9ec2c340.js.map"
+    ],
+    "component---src-pages-index-tsx": [
+      "component---src-pages-index-tsx-4d6dec4d7581ac61ac05.js",
+      "component---src-pages-index-tsx-4d6dec4d7581ac61ac05.js.map"
+    ],
+    "component---src-layouts-en-tsx": [
+      "component---src-layouts-en-tsx-95dbc09fd1d2c84ef9c9.js",
+      "component---src-layouts-en-tsx-95dbc09fd1d2c84ef9c9.js.map"
+    ],
+    "app": [
+      "app-330c13a134c6bbafab86.js",
+      "build-js-styles.css",
+      "app-330c13a134c6bbafab86.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---en-send-to-kodi": [
+      "path---en-send-to-kodi-ad73801cfb2bcb1cb105.js",
+      "path---en-send-to-kodi-ad73801cfb2bcb1cb105.js.map"
+    ],
+    "path---en": [
+      "path---en-ad73801cfb2bcb1cb105.js",
+      "path---en-ad73801cfb2bcb1cb105.js.map"
+    ],
+    "component---src-templates-404-tsx": [
+      "component---src-templates-404-tsx-b00ef83768e84e1aa39d.js",
+      "component---src-templates-404-tsx-b00ef83768e84e1aa39d.js.map"
+    ]
+  }
+}

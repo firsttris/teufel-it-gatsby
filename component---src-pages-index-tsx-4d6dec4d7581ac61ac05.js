@@ -1,0 +1,2 @@
+webpackJsonp([0xc956abe28b23],{255:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var u=n(1);t.default=function(){return u.createElement("div",null)}}});
+//# sourceMappingURL=component---src-pages-index-tsx-4d6dec4d7581ac61ac05.js.map

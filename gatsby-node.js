@@ -1,4 +1,5 @@
 const path = require('path');
+const fetch = require('node-fetch');
 
 const development = {
   portfolio: {
@@ -115,12 +116,17 @@ const consulting = {
 };
 
 exports.createPages = async ({ page, actions }) => {
+  const data = await fetch('https://api.github.com/users/firsttris/repos');
+  const result = await data.json();
+  const repos = result.filter(repository => repository.fork === false);
+  repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+
   const { createPage } = actions;
 
   const router = [
     { path: '/', name: 'Development', data: development },
     { path: '/Consulting', name: 'Consulting', data: consulting },
-    { path: '/Github', name: 'Github' },
+    { path: '/Github', name: 'Github', data: repos },
     { path: '/SendToKodi', name: 'SendToKodi' },
     { path: '/404', name: '404' },
     { path: '/Privacy', name: 'Privacy' }

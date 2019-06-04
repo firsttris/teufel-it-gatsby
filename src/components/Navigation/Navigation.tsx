@@ -35,7 +35,7 @@ export class Navigation extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      currentPath: '',
+      currentPath: this.props.location.pathname,
       hideNav: true
     };
   }

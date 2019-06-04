@@ -12,6 +12,6 @@ interface Props {
 
 export default (props: Props) => (
   <Layout location={props.location} locale={props.pageContext.locale}>
-    <Github locale={props.pageContext.locale} />
+    <Github locale={props.pageContext.locale} repos={props.pageContext.data} />
   </Layout>
 );

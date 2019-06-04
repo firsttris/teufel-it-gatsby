@@ -13,12 +13,12 @@ const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` }
 
 interface Props {
   locale: string;
+  repos: any;
 }
 
 interface State {
   searchInput: string;
   filteredRepositories: any[];
-  repositories: any[];
 }
 
 export class Github extends React.Component<Props, State> {
@@ -26,23 +26,8 @@ export class Github extends React.Component<Props, State> {
     super(props);
     this.state = {
       searchInput: '',
-      filteredRepositories: [],
-      repositories: []
+      filteredRepositories: this.props.repos
     };
-  }
-
-  componentDidMount() {
-    setTimeout(() => this.callService(), 1000);
-  }
-
-  callService() {
-    fetch('https://api.github.com/users/firsttris/repos').then(data =>
-      data.json().then(result => {
-        const repos = result.filter((repository: any) => repository.fork === false);
-        repos.sort((a: any, b: any) => b.stargazers_count - a.stargazers_count);
-        this.setState({ repositories: repos, filteredRepositories: repos });
-      })
-    );
   }
 
   onEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -52,14 +37,14 @@ export class Github extends React.Component<Props, State> {
   };
 
   search = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const repos = this.state.repositories.filter(repository =>
-      repository.name.toLowerCase().includes(event.target.value.toLowerCase())
+    const repos = this.props.repos.filter((repo: any) =>
+      repo.name.toLowerCase().includes(event.target.value.toLowerCase())
     );
     this.setState({ filteredRepositories: repos, searchInput: event.target.value });
   };
 
   reset = () => {
-    this.setState({ searchInput: '', filteredRepositories: this.state.repositories });
+    this.setState({ searchInput: '', filteredRepositories: this.props.repos });
   };
 
   render() {

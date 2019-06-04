@@ -1,17 +1,13 @@
-import { navigate, withPrefix } from 'gatsby';
+import { navigate } from 'gatsby';
 import * as React from 'react';
 
-const navigateTo = (locale: string) => {
-  navigate(withPrefix(`/${locale}/`));
-};
-
 export default (): any => {
-  if (typeof location !== 'undefined') {
+  if (typeof window !== 'undefined') {
     let locale = 'en';
     if (navigator.language.includes('de')) {
       locale = 'de';
     }
-    navigateTo(locale);
+    navigate(`/${locale}/`);
   }
 
   /*

@@ -82,7 +82,7 @@ export class Navigation extends React.Component<Props, State> {
                 <LinkItem
                   key={index}
                   index={index}
-                  focus={this.props.location.pathname === item.path}
+                  focus={this.props.location.pathname.replace('/teufel-it-gatsby', '') === item.path}
                   path={item.path}
                   name={item.name}
                   onClick={this.onClick}

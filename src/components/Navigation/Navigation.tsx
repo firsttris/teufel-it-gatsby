@@ -26,7 +26,6 @@ interface Props {
 }
 
 interface State {
-  currentPath: string;
   hideNav: boolean;
 }
 
@@ -35,17 +34,12 @@ export class Navigation extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      currentPath: this.props.location.pathname,
       hideNav: true
     };
   }
 
-  componentDidMount(): void {
-    this.setState({ currentPath: this.props.location.pathname });
-  }
-
   onClick = (index: number, path: string): void => {
-    this.setState({ currentPath: path, hideNav: true });
+    this.setState({ hideNav: true });
   };
 
   toggleNavigation = (): void => {
@@ -60,11 +54,14 @@ export class Navigation extends React.Component<Props, State> {
     const navItems = [
       { path: `/${this.props.locale}/`, name: getTranslatedLabel('NAVIGATION_DEVELOPMENT', this.props.locale) },
       {
-        path: `/${this.props.locale}/Consulting`,
+        path: `/${this.props.locale}/Consulting/`,
         name: getTranslatedLabel('NAVIGATION_CONSULTING', this.props.locale)
       },
-      { path: `/${this.props.locale}/Github`, name: getTranslatedLabel('NAVIGATION_PROJECTS', this.props.locale) },
-      { path: `/${this.props.locale}/SendToKodi`, name: getTranslatedLabel('NAVIGATION_SENDTOKODI', this.props.locale) }
+      { path: `/${this.props.locale}/Github/`, name: getTranslatedLabel('NAVIGATION_PROJECTS', this.props.locale) },
+      {
+        path: `/${this.props.locale}/SendToKodi/`,
+        name: getTranslatedLabel('NAVIGATION_SENDTOKODI', this.props.locale)
+      }
     ];
 
     return (
@@ -85,7 +82,7 @@ export class Navigation extends React.Component<Props, State> {
                 <LinkItem
                   key={index}
                   index={index}
-                  focus={this.state.currentPath === item.path}
+                  focus={this.props.location.pathname === item.path}
                   path={item.path}
                   name={item.name}
                   onClick={this.onClick}

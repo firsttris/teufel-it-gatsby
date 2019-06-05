@@ -83,27 +83,20 @@ export const Privacy = (props: { locale: string }) => (
           </div>
         </div>
         <div className="mt-4">
-          <h4>Erhebung und Verarbeitung personenbezogener Daten</h4>
+          <h4>{getTranslatedLabel('PRIVACY_PROCESSING_OF_DATA', props.locale)}</h4>
+          <p>{getTranslatedLabel('PRIVACY_PROCESSING_OF_DATA_TEXT', props.locale)}</p>
+        </div>
+        <div className="mt-4">
+          <h4>{getTranslatedLabel('PRIVACY_RIGHTS', props.locale)}</h4>
           <p>
-            Die Website sammelt keine personenbezogenen Daten. Zur Anzeige werden Informationen von Github und Apple
-            geladen. Dabei handelt es sich um Meta Daten zu meinen Github Account und Bewertungen aus dem AppStore von
-            Apple.
+            {getTranslatedLabel('PRIVACY_CONTACT', props.locale)}{' '}
+            <a href="mailto:info@teufel-it.de">info@teufel-it.de</a>{' '}
+            {getTranslatedLabel('PRIVACY_CONCERN', props.locale)}
           </p>
         </div>
         <div className="mt-4">
-          <h4>Ihre Rechte auf Auskunft, Berichtigung, Sperre, Löschung und Widerspruch</h4>
-          <p>
-            Kontaktieren Sie <a href="mailto:info@teufel-it.de">info@teufel-it.de</a> mit Ihrem Anliegen.
-          </p>
-        </div>
-        <div className="mt-4">
-          <h4>Änderung unserer Datenschutzbestimmungen</h4>
-          <p>
-            Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets den aktuellen
-            rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung
-            umzusetzen, z. B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue
-            Datenschutzerklärung.
-          </p>
+          <h4>{getTranslatedLabel('PRIVACY_POLICY', props.locale)}</h4>
+          <p>{getTranslatedLabel('PRIVACY_POLICY_TEXT', props.locale)}</p>
         </div>
       </div>
     </div>

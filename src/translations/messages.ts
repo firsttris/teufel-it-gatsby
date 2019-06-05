@@ -35,6 +35,15 @@ export const messages: any = {
     werden.',
     PRIVACY_FOLLOWING_COOKIES_ARE_USED: 'Folgende Cookies werden eingesetzt:',
     PRIVACY_MORE_INFO: 'mehr Informationen',
+    PRIVACY_PROCESSING_OF_DATA: 'Erhebung und Verarbeitung personenbezogener Daten',
+    PRIVACY_PROCESSING_OF_DATA_TEXT:
+      'Die Website sammelt keine personenbezogenen Daten. Zur Anzeige werden Informationen von Github und Apple geladen. Dabei handelt es sich um Meta Daten zu meinen Github Account und Bewertungen aus dem AppStore von Apple.',
+    PRIVACY_RIGHTS: 'Ihre Rechte auf Auskunft, Berichtigung, Sperre, Löschung und Widerspruch',
+    PRIVACY_CONTACT: 'Kontaktieren Sie',
+    PRIVACY_CONCERN: 'mit ihrem Anliegen',
+    PRIVACY_POLICY: 'Änderung unserer Datenschutzbestimmungen',
+    PRIVACY_POLICY_TEXT:
+      'Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z. B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.',
     HEADER_TITLE: '[ teufel it ]',
     HEADER_SUBTITLE: 'Software ist mein Handwerk',
     CONTACT_TITLE: 'Kontakt',
@@ -129,6 +138,15 @@ export const messages: any = {
       'If you want to prevent the use of cookies, your browser has the possibility to prevent the acceptance and storage of new cookies. Saved cookies can be deleted at any time.',
     PRIVACY_FOLLOWING_COOKIES_ARE_USED: 'The following cookies are used:',
     PRIVACY_MORE_INFO: 'more info',
+    PRIVACY_PROCESSING_OF_DATA: 'Collection and processing of personal data',
+    PRIVACY_PROCESSING_OF_DATA_TEXT:
+      "The website does not collect personal data. The information is loaded from Github and Apple. These are meta data about my Github account and reviews from Apple's AppStore.",
+    PRIVACY_RIGHTS: 'Your rights to information, correction, suspension, cancellation and opposition',
+    PRIVACY_POLICY: 'Change of our privacy policy',
+    PRIVACY_POLICY_TEXT:
+      'We reserve the right to change this Privacy Policy from time to time to comply with current legal requirements or to implement changes to our services in the Privacy Policy, such as: For example, when introducing new services. Your new visit will be subject to the new privacy policy.',
+    PRIVACY_CONTACT: 'Contact',
+    PRIVACY_CONCERN: 'with your concern',
     HEADER_TITLE: '[ teufel it ]',
     HEADER_SUBTITLE: 'Software is my craft',
     CONTACT_TITLE: 'Contact',

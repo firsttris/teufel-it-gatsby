@@ -45,44 +45,21 @@ export const Privacy = (props: { locale: string }) => (
           <div>{getTranslatedLabel('PRIVACY_WE_USE_GOOGLE_ANALYTICS', props.locale)}</div>
         </div>
         <div className="mt-4">
-          <h4>Verwendung von Google Analytics</h4>
-          <p>
-            Diese Webseite benutzt Google Analytics, einen Webanalysedienst der Google Inc. (folgend: Google). Google
-            Analytics verwendet sog. „Cookies“, also Textdateien, die auf Ihrem Computer gespeichert werden und die eine
-            Analyse der Benutzung der Webseite durch Sie ermöglichen. Die durch das Cookie erzeugten Informationen über
-            Ihre Benutzung dieser Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort
-            gespeichert. Aufgrund der Aktivierung der IP-Anonymisierung auf diesen Webseiten, wird Ihre IP-Adresse von
-            Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des
-            Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle
-            IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt.
-          </p>
-          <p>
-            Im Auftrag des Betreibers dieser Webseite wird Google diese Informationen benutzen, um Ihre Nutzung der
-            Webseite auszuwerten, um Reports über die Webseitenaktivitäten zusammenzustellen und um weitere mit der
-            Webseitennutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Webseitenbetreiber zu
-            erbringen. Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit
-            anderen Daten von Google zusammengeführt.
-          </p>
+          <h4>{getTranslatedLabel('PRIVACY_USE_OF_ANALYTICS', props.locale)}</h4>
+          <p>{getTranslatedLabel('PRIVACY_GOOGLE_ANALYTICS_TEXT1', props.locale)}</p>
+          <p>{getTranslatedLabel('PRIVACY_GOOGLE_ANALYTICS_TEXT2', props.locale)}</p>
           <p>
             <a href={'https://www.google.com/analytics/learn/privacy.html?hl=de'} target="_blank">
-              Google Analytics Datenschutzerklärung
+              Google Analytics {getTranslatedLabel('PRIVACYPOLICY', props.locale)}
             </a>
           </p>
-          <p>Sie haben die Möglichkeit, die Speicherung der Cookies auf Ihrem Gerät zu verhindern</p>
         </div>
         <div className="mt-4">
           <h4>Cookies</h4>
-          <p>
-            Wie beinahe alle Webseiten verwendet auch diese Website Cookies. Dazu werden kleine Textdateien in relation
-            zu dieser Website auf ihrem Computer gespeichert.
-          </p>
-          <p>
-            Falls Sie die Verwendung von Cookies unterbinden wollen, besteht dazu bei Ihrem Browser die Möglichkeit, die
-            Annahme und Speicherung neuer Cookies zu verhindern. Gespeicherte Cookies können jederzeit wieder gelöscht
-            werden.
-          </p>
+          <p>{getTranslatedLabel('PRIVACY_COOKIE_TEXT1', props.locale)}</p>
+          <p>{getTranslatedLabel('PRIVACY_COOKIE_TEXT2', props.locale)}</p>
           <div>
-            Folgende Cookies werden eingesetzt:
+            {getTranslatedLabel('PRIVACY_FOLLOWING_COOKIES_ARE_USED', props.locale)}
             <ul>
               <li>
                 __cfduid = Cloudflare,{' '}
@@ -90,7 +67,7 @@ export const Privacy = (props: { locale: string }) => (
                   href="https://support.cloudflare.com/hc/en-us/articles/200170156-What-does-the-Cloudflare-cfduid-cookie-do-"
                   target="_blank"
                 >
-                  mehr Informationen
+                  {getTranslatedLabel('PRIVACY_MORE_INFO', props.locale)}
                 </a>
               </li>
               <li>
@@ -99,7 +76,7 @@ export const Privacy = (props: { locale: string }) => (
                   href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage"
                   target="_blank"
                 >
-                  mehr Informationen
+                  {getTranslatedLabel('PRIVACY_MORE_INFO', props.locale)}
                 </a>
               </li>
             </ul>

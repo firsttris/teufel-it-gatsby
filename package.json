@@ -7,7 +7,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "emojione": "^4.5.0",
-    "gatsby": "^2.8.2",
+    "gatsby": "^2.8.5",
     "gatsby-image": "^2.1.2",
     "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -32,7 +32,7 @@
   "scripts": {
     "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
-    "fffpredeploy": "rm -Rf public && npm run build --prefix-paths",
+    "predeploy": "rm -Rf public && npm run build --prefix-paths",
     "deploy": "gh-pages -d public"
   },
   "devDependencies": {

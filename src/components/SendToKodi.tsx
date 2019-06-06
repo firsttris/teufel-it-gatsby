@@ -1,27 +1,23 @@
+import Img, { FixedObject } from 'gatsby-image';
 import * as React from 'react';
 import { getTranslatedLabel } from './../translations/provider';
 import { Contact } from './Contact';
 import { Impressum } from './Impressum';
 
-const Lines = require('./../assets/images/backgrounds/lines.png');
-const SendToKodiScreen1 = require('./../assets/images/SendToKodi/1.jpg');
-const SendToKodiScreen2 = require('./../assets/images/SendToKodi/2.jpg');
-const SendToKodiScreen3 = require('./../assets/images/SendToKodi/3.jpg');
-const SendToKodiScreen4 = require('./../assets/images/SendToKodi/4.jpg');
-const Logo = require('./../assets/images/SendToKodi/logo.jpg');
-
 const imgStyle: React.CSSProperties = {
   borderRadius: '25px',
-  border: '1px solid black',
-  height: 'auto',
-  width: '250px'
+  border: '1px solid black'
 };
-
-const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` };
 
 interface Props {
   locale: string;
   reviews: any[];
+  sendToKodiScreen1: FixedObject;
+  sendToKodiScreen2: FixedObject;
+  sendToKodiScreen3: FixedObject;
+  sendToKodiScreen4: FixedObject;
+  logo: FixedObject;
+  background: FixedObject;
 }
 
 interface State {}
@@ -29,7 +25,7 @@ interface State {}
 export class SendToKodi extends React.Component<Props, State> {
   render() {
     return (
-      <div className="container-fluid" style={containerStyle}>
+      <div className="container-fluid" style={{ backgroundImage: `url(${this.props.background})` }}>
         <div style={{ height: '75px' }} />
         <div className="container">
           <div className="row">
@@ -38,7 +34,7 @@ export class SendToKodi extends React.Component<Props, State> {
               <p>
                 <i>von Tristan Teufel</i>
               </p>
-              <img style={imgStyle} src={Logo} />
+              <Img fixed={this.props.logo} style={imgStyle} />
             </div>
           </div>
           <div className="row mt-4">
@@ -94,16 +90,16 @@ export class SendToKodi extends React.Component<Props, State> {
           </div>
           <div className="row">
             <div className="col-xs-12 col-md-12 col-lg-3 py-4">
-              <img style={imgStyle} src={SendToKodiScreen1} />
+              <Img style={imgStyle} fixed={this.props.sendToKodiScreen1} />
             </div>
             <div className="col-xs-12 col-md-12 col-lg-3 py-4">
-              <img style={imgStyle} src={SendToKodiScreen2} />
+              <Img style={imgStyle} fixed={this.props.sendToKodiScreen2} />
             </div>
             <div className="col-xs-12 col-md-12 col-lg-3 py-4">
-              <img style={imgStyle} src={SendToKodiScreen3} />
+              <Img style={imgStyle} fixed={this.props.sendToKodiScreen3} />
             </div>
             <div className="col-xs-12 col-md-12 col-lg-3 py-4">
-              <img style={imgStyle} src={SendToKodiScreen4} />
+              <Img style={imgStyle} fixed={this.props.sendToKodiScreen4} />
             </div>
           </div>
           <div className="row mt-4">

@@ -1,3 +1,4 @@
+import { FixedObject } from 'gatsby-image';
 import * as React from 'react';
 import { Contact } from './Contact';
 import { FullImage } from './FullImage';
@@ -10,9 +11,10 @@ const Lines = require('./../assets/images/backgrounds/lines.png');
 
 interface Props {
   json: any;
-  firstImage: any;
-  middleImage: any;
-  lastImage: any;
+  firstImage: FixedObject;
+  middleImage: FixedObject;
+  lastImage: FixedObject;
+  background: FixedObject;
   locale: string;
 }
 

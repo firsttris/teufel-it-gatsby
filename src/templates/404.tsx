@@ -15,7 +15,7 @@ export default (props: Props) => (
     <NotFound
       locale={props.pageContext.locale}
       unicorn={props.data.unicorn.childImageSharp.fixed}
-      lines={props.data.lines.childImageSharp.fluid.base64}
+      background={props.data.lines.childImageSharp.fixed.src}
     />
   </Layout>
 );
@@ -24,19 +24,15 @@ export const query = graphql`
   query {
     unicorn: file(relativePath: { eq: "NotFound/unicorn-small.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed(width: 327) {
+        fixed {
           ...GatsbyImageSharpFixed
         }
       }
     }
     lines: file(relativePath: { eq: "backgrounds/lines.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
+        fixed(quality: 100) {
+          ...GatsbyImageSharpFixed
         }
       }
     }

@@ -1,3 +1,4 @@
+import { FixedObject } from 'gatsby-image';
 import * as React from 'react';
 import { Contact } from './Contact';
 import { FullImage } from './FullImage';
@@ -6,14 +7,11 @@ import { Header } from './Header';
 import { Impressum } from './Impressum';
 import { SectionHeaderWithSubRow } from './SectionHeaderWithSubRow';
 
-const Lines = require('./../assets/images/backgrounds/lines.png');
-const OldComputer = require('./../assets/images/code.jpg');
-
-const containerStyle: React.CSSProperties = { backgroundImage: `url(${Lines})` };
-
 interface Props {
   locale: string;
   repos: any;
+  background: FixedObject;
+  code: FixedObject;
 }
 
 interface State {
@@ -49,9 +47,9 @@ export class Github extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="container-fluid" style={containerStyle}>
+      <div className="container-fluid" style={{ backgroundImage: `url(${this.props.background})` }}>
         <div className="text-center">
-          <FullImage image={OldComputer} height="550px" />
+          <FullImage image={this.props.code} height="550px" />
           <Header locale={this.props.locale} />
         </div>
         <div className="container">

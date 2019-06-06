@@ -1,11 +1,11 @@
+import { graphql } from 'gatsby';
 import * as React from 'react';
 import { Parallax } from './../components/Parallax';
 import { Layout } from './../layouts/Layout';
-const MuchCode = require('./../assets/images/much_code.jpg');
-const code = require('./../assets/images/3dCode.jpg');
 
 interface Props {
   location: Location;
+  data: any;
   pageContext: {
     data: any;
     locale: string;
@@ -15,11 +15,38 @@ interface Props {
 export default (props: Props) => (
   <Layout location={props.location} locale={props.pageContext.locale}>
     <Parallax
-      firstImage={code}
-      middleImage={MuchCode}
-      lastImage={code}
+      firstImage={props.data.code.childImageSharp.fluid}
+      middleImage={props.data.much_code.childImageSharp.fluid}
+      lastImage={props.data.code.childImageSharp.fluid}
+      background={props.data.lines.childImageSharp.fixed.src}
       json={props.pageContext.data}
       locale={props.pageContext.locale}
     />
   </Layout>
 );
+
+export const query = graphql`
+  query {
+    much_code: file(relativePath: { eq: "much_code.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    code: file(relativePath: { eq: "3dCode.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    lines: file(relativePath: { eq: "backgrounds/lines.png" }) {
+      childImageSharp {
+        fixed(quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;

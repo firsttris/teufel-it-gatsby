@@ -17,11 +17,11 @@ const spacerStyle: React.CSSProperties = { height: '80px' };
 interface Props {
   locale: string;
   unicorn: FixedObject;
-  lines: FixedObject;
+  background: FixedObject;
 }
 
 export const NotFound = (props: Props) => (
-  <div style={{ ...containerStyle, ...{ backgroundImage: `url(${props.lines})` } }}>
+  <div style={{ ...containerStyle, ...{ backgroundImage: `url(${props.background})` } }}>
     <Img fixed={props.unicorn} />
     <h2>{getTranslatedLabel('ERROR_TEXT', props.locale)}</h2>
     <div>{getTranslatedLabel('ERROR_NOT_FOUND', props.locale)}</div>

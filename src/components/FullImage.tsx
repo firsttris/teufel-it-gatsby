@@ -1,3 +1,4 @@
+import Img from 'gatsby-image';
 import * as React from 'react';
 
 interface Props {
@@ -7,25 +8,21 @@ interface Props {
 
 interface State {}
 
-const fullImageStyle: React.CSSProperties = {
-  position: 'relative',
-  opacity: 0.65,
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  minHeight: '400px'
-};
-
 export class FullImage extends React.Component<Props, State> {
   render() {
     return (
       <div className="row">
         <div className="col" style={{ padding: 0 }}>
-          <div
+          <Img
+            fluid={this.props.image}
             style={{
-              ...fullImageStyle,
-              height: this.props.height,
-              backgroundImage: `url(${this.props.image})`
+              position: 'relative',
+              opacity: 0.65,
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              minHeight: '400px',
+              height: this.props.height
             }}
           />
         </div>

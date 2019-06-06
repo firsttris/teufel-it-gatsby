@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 import { Parallax } from './../components/Parallax';
 import { Layout } from './../layouts/Layout';
 
@@ -11,6 +12,15 @@ interface Props {
 
 export default (props: Props) => (
   <Layout location={props.location} locale={props.pageContext.locale}>
+    <Helmet>
+      <title>Teufel IT, IT-Strategieberatung, Geschäftsanwendungen, Geschäftsprozesse</title>
+      <meta charSet="utf-8" />
+      <meta
+        name="description"
+        content="Integration, IT-Beratung, IT-Strategieberatung, Geschäftsanwendungen, Geschäftsprozesse, Server, Virtualisierung, Telefonanlagen"
+      />
+      <link rel="canonical" href="http://teufel-it.de/it-strategieberatung" />
+    </Helmet>
     <Parallax
       firstImage={props.data.meeting.childImageSharp.fluid}
       middleImage={props.data.server.childImageSharp.fluid}

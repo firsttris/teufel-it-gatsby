@@ -33,7 +33,8 @@
     "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "predeploy": "rm -Rf public && npm run build --prefix-paths",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public",
+    "prod": "gatsby serve"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.8",

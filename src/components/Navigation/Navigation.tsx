@@ -90,6 +90,9 @@ export class Navigation extends React.Component<Props, State> {
               );
             })}
           </div>
+          <li className="btn btn-outline-dark" style={{ color: '#f00', cursor: 'pointer', marginTop: '5px' }}>
+            DE
+          </li>
         </ul>
       </div>
     );

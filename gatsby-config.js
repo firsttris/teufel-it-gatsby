@@ -1,7 +1,7 @@
 const path = require(`path`);
 
 module.exports = {
-  pathPrefix: '/teufel-it-gatsby',
+  // pathPrefix: '/teufel-it-gatsby',
   siteMetadata: {
     title: 'teufel-it',
     siteUrl: `https://teufel-it.de`

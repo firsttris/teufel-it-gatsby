@@ -11,7 +11,6 @@ interface Props {
 
 export default (props: Props) => (
   <Layout location={props.location} locale={props.pageContext.locale}>
-    {console.log(props.data)}
     <NotFound
       locale={props.pageContext.locale}
       unicorn={props.data.unicorn.childImageSharp.fixed}

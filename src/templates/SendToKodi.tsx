@@ -4,6 +4,7 @@ import { Layout } from './../layouts/Layout';
 
 interface Props {
   location: Location;
+  data: any;
   pageContext: { locale: string; data: any };
 }
 

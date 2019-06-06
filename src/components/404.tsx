@@ -11,7 +11,7 @@ const containerStyle: React.CSSProperties = {
   height: '100vh',
   paddingTop: '100px'
 };
-const imageStyle: React.CSSProperties = { marginTop: '50px', marginBottom: '50px', height: '200px' };
+
 const spacerStyle: React.CSSProperties = { height: '80px' };
 
 interface Props {

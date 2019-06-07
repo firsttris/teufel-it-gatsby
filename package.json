@@ -41,18 +41,19 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.8",
+    "@types/emojione": "^2.2.5",
     "@types/node": "^12.0.4",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
-    "@types/emojione": "^2.2.5",
     "classnames": "^2.2.6",
     "gh-pages": "^2.0.1",
+    "node-fetch": "^2.6.0",
     "prettier": "^1.17.1",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.0.0",
-    "node-fetch": "^2.6.0"
+    "uuid": "^3.3.2"
   }
 }

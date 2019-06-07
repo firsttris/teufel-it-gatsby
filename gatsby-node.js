@@ -1,5 +1,7 @@
 const path = require('path');
 const fetch = require('node-fetch');
+const crypto = require('crypto');
+const uuidv1 = require('uuid/v1');
 
 const development = {
   portfolio: {
@@ -115,17 +117,61 @@ const consulting = {
   }
 };
 
-exports.createPages = async ({ page, actions }) => {
-  const repos = await fetchGithubData();
+exports.sourceNodes = async ({ actions }) => {
+  const { createNode } = actions
+
   const reviews = await fetchReviews();
+  reviews.forEach(review => {
+    const reviewNode = {
+      // Required fields.
+      id: uuidv1(),
+      parent: `null`,
+      children: [],
+      internal: {
+        type: `review`,
+      },
+      ...review
+  }
+    const contentDigest = crypto
+    .createHash(`md5`)
+    .update(JSON.stringify(reviewNode))
+    .digest(`hex`);
+    reviewNode.internal.contentDigest = contentDigest;
+
+    createNode(reviewNode);
+  });
+
+  const repos = await fetchGithubData();
+  repos.forEach(repo => {
+    const repoNode = {
+      // Required fields.
+      id: uuidv1(),
+      parent: `null`,
+      children: [],
+      internal: {
+        type: `repo`,
+      },
+      ...repo
+  }
+    const contentDigest = crypto
+    .createHash(`md5`)
+    .update(JSON.stringify(repoNode))
+    .digest(`hex`);
+    repoNode.internal.contentDigest = contentDigest;
+
+    createNode(repoNode);
+  })
+}
+
+exports.createPages = async ({ page, actions }) => {
 
   const { createPage } = actions;
 
   const router = [
     { path: '/', name: 'Development', data: development },
     { path: '/it-strategieberatung', name: 'Consulting', data: consulting },
-    { path: '/projects', name: 'Github', data: repos },
-    { path: '/sendtokodi', name: 'SendToKodi', data: reviews },
+    { path: '/projects', name: 'Github' },
+    { path: '/sendtokodi', name: 'SendToKodi' },
     { path: '/404', name: '404' },
     { path: '/privacy', name: 'Privacy' }
   ];
@@ -148,7 +194,19 @@ async function fetchGithubData() {
   const result = await data.json();
   const repos = result.filter(repository => repository.fork === false);
   repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
-  return repos;
+  const mappedRepos = [];
+  repos.forEach(repo => {
+    const mappedRepo = {
+      name: repo.name,
+      html_url: repo.html_url,
+      stargazers_count: repo.stargazers_count,
+      forks_count: repo.forks_count,
+      description: repo.description,
+      language: repo.language
+    }
+    mappedRepos.push(mappedRepo);
+  })
+  return mappedRepos;
 }
 
 async function fetchReview(country) {

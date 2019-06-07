@@ -26,7 +26,7 @@ export default (props: Props) => (
     </Helmet>
     <Github
       locale={props.pageContext.locale}
-      repos={props.pageContext.data}
+      repos={props.data.repos.nodes}
       code={props.data.code.childImageSharp.fluid}
       background={props.data.lines.childImageSharp.fixed.src}
     />
@@ -47,6 +47,16 @@ export const query = graphql`
         fixed(quality: 100) {
           ...GatsbyImageSharpFixed
         }
+      }
+    }
+    repos: allRepo {
+      nodes {
+        description
+        forks_count
+        html_url
+        language
+        name
+        stargazers_count
       }
     }
   }

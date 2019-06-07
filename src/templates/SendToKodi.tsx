@@ -23,7 +23,7 @@ export default (props: Props) => (
     </Helmet>
     <SendToKodi
       locale={props.pageContext.locale}
-      reviews={props.pageContext.data}
+      reviews={props.data.reviews.nodes}
       sendToKodiScreen1={props.data.sendToKodi1.childImageSharp.fixed}
       sendToKodiScreen2={props.data.sendToKodi2.childImageSharp.fixed}
       sendToKodiScreen3={props.data.sendToKodi3.childImageSharp.fixed}
@@ -66,7 +66,7 @@ export const query = graphql`
     }
     logo: file(relativePath: { eq: "SendToKodi/logo.jpg" }) {
       childImageSharp {
-        fixed {
+        fixed(width: 175) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -76,6 +76,14 @@ export const query = graphql`
         fixed(quality: 100) {
           ...GatsbyImageSharpFixed
         }
+      }
+    }
+    reviews: allReview {
+      nodes {
+        title
+        text
+        rating
+        name
       }
     }
   }

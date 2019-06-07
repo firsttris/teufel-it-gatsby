@@ -23,7 +23,7 @@ export const query = graphql`
   query {
     unicorn: file(relativePath: { eq: "NotFound/unicorn-small.png" }) {
       childImageSharp {
-        fixed {
+        fixed(width: 327) {
           ...GatsbyImageSharpFixed
         }
       }

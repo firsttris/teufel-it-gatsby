@@ -11,7 +11,6 @@ interface Props {
 
 export default (props: Props) => (
   <Layout location={props.location} locale={props.pageContext.locale}>
-    {console.log(props)}
     <Privacy html={props.data.markdownRemark.html} />
   </Layout>
 );

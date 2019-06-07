@@ -19,14 +19,14 @@ export default (props: Props) => (
         name="description"
         content="Integration, IT-Beratung, IT-Strategieberatung, Geschäftsanwendungen, Geschäftsprozesse, Server, Virtualisierung, Telefonanlagen"
       />
-      <link rel="canonical" href="http://teufel-it.de/it-strategieberatung" />
+      <link rel="canonical" href={`http://teufel-it.de/${props.pageContext.locale}/it-strategieberatung`} />
     </Helmet>
     <Parallax
       firstImage={props.data.meeting.childImageSharp.fluid}
       middleImage={props.data.server.childImageSharp.fluid}
       lastImage={props.data.meeting.childImageSharp.fluid}
       background={props.data.lines.childImageSharp.fixed.src}
-      json={props.pageContext.data}
+      json={props.data.consulting.nodes[1]}
       locale={props.pageContext.locale}
     />
   </Layout>
@@ -52,6 +52,30 @@ export const query = graphql`
       childImageSharp {
         fixed(quality: 100) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    consulting: allDataJson {
+      nodes {
+        portfolio {
+          text
+          title
+          cards {
+            gridClass
+            iconClass
+            text
+            title
+          }
+        }
+        principles {
+          text
+          title
+          cards {
+            gridClass
+            iconClass
+            text
+            title
+          }
         }
       }
     }

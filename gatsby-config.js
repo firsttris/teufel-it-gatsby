@@ -33,7 +33,7 @@ module.exports = {
         short_name: `Teufel IT`,
         start_url: `/`,
         background_color: `#f7f0eb`,
-        theme_color: `ffffff`,
+        theme_color: `#ffffff`,
         display: `standalone`,
         icon: `src/assets/favicon.png`,
         icons: [
@@ -106,10 +106,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/markdown-pages`,
+        path: path.join(__dirname, `src`, `markdown-pages`),
         name: `markdown-pages`
       }
     },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.join(__dirname, `src`, `data`),
+      },
+    },
   ]
 };

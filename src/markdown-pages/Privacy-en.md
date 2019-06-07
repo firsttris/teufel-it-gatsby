@@ -4,6 +4,7 @@ title: "Privacy-en"
 ---
 
 ## Privacy Policy
+<br />
 
 #### General Information
 Tristan Teufel   

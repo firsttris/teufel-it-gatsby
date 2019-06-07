@@ -4,6 +4,7 @@ title: "Privacy-de"
 ---
 
 ## Datenschutzerklärung
+<br />
 
 #### Allgemeine Angaben
 Tristan Teufel   

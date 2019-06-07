@@ -19,7 +19,7 @@ export default (props: Props) => (
         name="description"
         content="Teufel IT, Softwareentwicklung, JavaScript, NodeJs, Integration, Webservices, Docker"
       />
-      <link rel="canonical" href="http://teufel-it.de" />
+      <link rel="canonical" href={`http://teufel-it.de/${props.pageContext.locale}/sendtokodi`} />
     </Helmet>
     <SendToKodi
       locale={props.pageContext.locale}

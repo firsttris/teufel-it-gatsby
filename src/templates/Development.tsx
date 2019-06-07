@@ -22,14 +22,14 @@ export default (props: Props) => (
         name="description"
         content="Teufel IT, Softwareentwicklung, JavaScript, NodeJs, Integration, Webservices, Docker"
       />
-      <link rel="canonical" href="http://teufel-it.de" />
+      <link rel="canonical" href={`http://teufel-it.de/${props.pageContext.locale}`} />
     </Helmet>
     <Parallax
       firstImage={props.data.code.childImageSharp.fluid}
       middleImage={props.data.much_code.childImageSharp.fluid}
       lastImage={props.data.code.childImageSharp.fluid}
       background={props.data.lines.childImageSharp.fixed.src}
-      json={props.pageContext.data}
+      json={props.data.development.nodes[0]}
       locale={props.pageContext.locale}
     />
   </Layout>
@@ -55,6 +55,30 @@ export const query = graphql`
       childImageSharp {
         fixed(quality: 100) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    development: allDataJson {
+      nodes {
+        portfolio {
+          text
+          title
+          cards {
+            gridClass
+            iconClass
+            text
+            title
+          }
+        }
+        principles {
+          text
+          title
+          cards {
+            gridClass
+            iconClass
+            text
+            title
+          }
         }
       }
     }

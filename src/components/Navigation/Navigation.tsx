@@ -1,3 +1,4 @@
+import { navigate } from 'gatsby';
 import * as React from 'react';
 import { getTranslatedLabel } from './../../translations/provider';
 import { LinkItem } from './LinkItem';
@@ -42,6 +43,13 @@ export class Navigation extends React.Component<Props, State> {
     this.setState({ hideNav: true });
   };
 
+  onLanguageClick = () => {
+    const pathname: string = this.props.location.pathname.includes('/de/')
+      ? this.props.location.pathname.replace('/de/', '/en/')
+      : this.props.location.pathname.replace('/en/', '/de/');
+    navigate(pathname);
+  };
+
   toggleNavigation = (): void => {
     this.setState({ hideNav: !this.state.hideNav });
   };
@@ -67,7 +75,7 @@ export class Navigation extends React.Component<Props, State> {
     return (
       <div className="nav-bar">
         <ul style={ulStyle}>
-          <li className="nav-button">
+          <li className="nav-button" style={{ float: 'left' }}>
             <a className="btn btn-outline-dark pull-left" style={navButtonStyle} onClick={this.scrollToBottom}>
               Contact
             </a>
@@ -90,8 +98,12 @@ export class Navigation extends React.Component<Props, State> {
               );
             })}
           </div>
-          <li className="btn btn-outline-dark" style={{ color: '#f00', cursor: 'pointer', marginTop: '5px' }}>
-            DE
+          <li
+            className="btn btn-outline-dark m-md-1 m-2"
+            style={{ color: '#f00', cursor: 'pointer', float: 'right' }}
+            onClick={this.onLanguageClick}
+          >
+            {this.props.locale}
           </li>
         </ul>
       </div>

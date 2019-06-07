@@ -29,7 +29,7 @@ export default (props: Props) => (
       middleImage={props.data.much_code.childImageSharp.fluid}
       lastImage={props.data.code.childImageSharp.fluid}
       background={props.data.lines.childImageSharp.fixed.src}
-      json={props.data.development.nodes[0]}
+      json={props.data.development.nodes[1]}
       locale={props.pageContext.locale}
     />
   </Layout>

@@ -26,7 +26,7 @@ export default (props: Props) => (
       middleImage={props.data.server.childImageSharp.fluid}
       lastImage={props.data.meeting.childImageSharp.fluid}
       background={props.data.lines.childImageSharp.fixed.src}
-      json={props.data.consulting.nodes[1]}
+      json={props.data.consulting.nodes[0]}
       locale={props.pageContext.locale}
     />
   </Layout>

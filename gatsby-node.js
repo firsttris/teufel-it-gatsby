@@ -137,7 +137,7 @@ exports.createPages = async ({ page, actions }) => {
       createPage({
         path: `/${locale}${route.path}`,
         component: path.resolve(`src/templates/${route.name}.tsx`),
-        context: { locale, data: route.data }
+        context: { locale, data: route.data, slug: `${route.name}-${locale}` }
       });
     });
   });

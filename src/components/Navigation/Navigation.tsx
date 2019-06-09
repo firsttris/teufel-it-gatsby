@@ -75,15 +75,25 @@ export class Navigation extends React.Component<Props, State> {
     return (
       <div className="nav-bar">
         <ul style={ulStyle}>
-          <li className="nav-button" style={{ float: 'left' }}>
-            <a className="btn btn-outline-dark pull-left" style={navButtonStyle} onClick={this.scrollToBottom}>
-              Contact
-            </a>
-            <a className="btn btn-outline-dark pull-right" style={navButtonStyle} onClick={this.toggleNavigation}>
-              <i className="fa fa-bars" aria-hidden="true" />
-            </a>
-            <div className="clearfix" />
-          </li>
+          <div>
+            <li className="nav-button" style={{ float: 'left' }}>
+              <a className="btn btn-outline-dark pull-left" style={navButtonStyle} onClick={this.scrollToBottom}>
+                Contact
+              </a>
+              <a className="btn btn-outline-dark pull-right" style={navButtonStyle} onClick={this.toggleNavigation}>
+                <i className="fa fa-bars" aria-hidden="true" />
+              </a>
+              <div className="clearfix" />
+            </li>
+            <li
+              className="btn btn-outline-dark m-md-1 m-2"
+              style={{ color: '#f00', cursor: 'pointer', float: 'right' }}
+              onClick={this.onLanguageClick}
+            >
+              {this.props.locale}
+            </li>
+            <div className="clearfix d-md-none" />
+          </div>
           <div className={this.state.hideNav ? 'navigation' : ''}>
             {navItems.map((item, index) => {
               return (
@@ -98,13 +108,6 @@ export class Navigation extends React.Component<Props, State> {
               );
             })}
           </div>
-          <li
-            className="btn btn-outline-dark m-md-1 m-2"
-            style={{ color: '#f00', cursor: 'pointer', float: 'right' }}
-            onClick={this.onLanguageClick}
-          >
-            {this.props.locale}
-          </li>
         </ul>
       </div>
     );

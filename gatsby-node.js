@@ -6,27 +6,6 @@ const uuidv1 = require('uuid/v1');
 exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions
 
-  const reviews = await fetchReviews();
-  reviews.forEach(review => {
-    const reviewNode = {
-      // Required fields.
-      id: uuidv1(),
-      parent: `null`,
-      children: [],
-      internal: {
-        type: `review`,
-      },
-      ...review
-  }
-    const contentDigest = crypto
-    .createHash(`md5`)
-    .update(JSON.stringify(reviewNode))
-    .digest(`hex`);
-    reviewNode.internal.contentDigest = contentDigest;
-
-    createNode(reviewNode);
-  });
-
   const repos = await fetchGithubData();
   repos.forEach(repo => {
     const repoNode = {
@@ -46,7 +25,7 @@ exports.sourceNodes = async ({ actions }) => {
     repoNode.internal.contentDigest = contentDigest;
 
     createNode(repoNode);
-  })
+  });
 }
 
 exports.createPages = async ({ page, actions }) => {
@@ -57,7 +36,6 @@ exports.createPages = async ({ page, actions }) => {
     { path: '/', name: 'Development' },
     { path: '/it-strategieberatung', name: 'Consulting' },
     { path: '/projects', name: 'Github' },
-    { path: '/sendtokodi', name: 'SendToKodi' },
     { path: '/404', name: '404' },
     { path: '/privacy', name: 'Privacy' }
   ];
@@ -93,29 +71,6 @@ async function fetchGithubData() {
     mappedRepos.push(mappedRepo);
   })
   return mappedRepos;
-}
-
-async function fetchReview(country) {
-  const reviews = [];
-  return fetch(
-    'https://itunes.apple.com/' + country + '/rss/customerreviews/id=1113517603/sortBy=mostRecent/json'
-  ).then(data =>
-    data.json().then(result => {
-      const entries = result.feed.entry;
-      for (const index in entries) {
-        if (entries[index].author && !entries[index]['im:artist']) {
-          const review = {
-            name: entries[index].author ? entries[index].author.name.label : '',
-            text: entries[index].content ? entries[index].content.label : '',
-            rating: entries[index]['im:rating'] ? entries[index]['im:rating'].label : '',
-            title: entries[index].title ? entries[index].title.label : ''
-          };
-          reviews.push(review);
-        }
-      }
-      return reviews;
-    })
-  );
 }
 
 async function fetchReviews() {

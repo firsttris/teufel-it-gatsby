@@ -65,11 +65,7 @@ export class Navigation extends React.Component<Props, State> {
         path: `/${this.props.locale}/it-strategieberatung/`,
         name: getTranslatedLabel('NAVIGATION_CONSULTING', this.props.locale)
       },
-      { path: `/${this.props.locale}/projects/`, name: getTranslatedLabel('NAVIGATION_PROJECTS', this.props.locale) },
-      {
-        path: `/${this.props.locale}/sendtokodi/`,
-        name: getTranslatedLabel('NAVIGATION_SENDTOKODI', this.props.locale)
-      }
+      { path: `/${this.props.locale}/projects/`, name: getTranslatedLabel('NAVIGATION_PROJECTS', this.props.locale) }
     ];
 
     return (

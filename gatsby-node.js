@@ -34,7 +34,7 @@ exports.createPages = async ({ page, actions }) => {
 
   const router = [
     { path: '/', name: 'Development' },
-    { path: '/it-strategieberatung', name: 'Consulting' },
+    // { path: '/it-strategieberatung', name: 'Consulting' },
     { path: '/projects', name: 'Github' },
     { path: '/404', name: '404' },
     { path: '/privacy', name: 'Privacy' }

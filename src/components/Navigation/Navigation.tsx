@@ -61,10 +61,12 @@ export class Navigation extends React.Component<Props, State> {
   render(): JSX.Element {
     const navItems = [
       { path: `/${this.props.locale}/`, name: getTranslatedLabel('NAVIGATION_DEVELOPMENT', this.props.locale) },
+      /*
       {
         path: `/${this.props.locale}/it-strategieberatung/`,
         name: getTranslatedLabel('NAVIGATION_CONSULTING', this.props.locale)
       },
+      */
       { path: `/${this.props.locale}/projects/`, name: getTranslatedLabel('NAVIGATION_PROJECTS', this.props.locale) }
     ];
 

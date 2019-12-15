@@ -36,8 +36,8 @@ export const Impressum = (props: { locale: string }) => (
               rel="noopener noreferrer"
               target="_blank"
             >
-              {getTranslatedLabel('GITHUB_PAGE_LINK', props.locale)}
-              <i className="fab fa-github" aria-hidden="true" />
+              {' '}
+              <i className="fab fa-github" aria-hidden="true" /> {getTranslatedLabel('GITHUB_PAGE_LINK', props.locale)}
             </a>
           </div>
         </div>

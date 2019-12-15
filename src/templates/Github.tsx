@@ -16,11 +16,13 @@ interface Props {
 export default (props: Props) => (
   <Layout location={props.location} locale={props.pageContext.locale}>
     <Helmet>
-      <title>Teufel IT, Software ist unser Handwerk</title>
+      <title>Teufel IT, Software ist mein Handwerk</title>
       <meta charSet="utf-8" />
       <meta
         name="description"
-        content="Teufel IT, Softwareentwicklung, JavaScript, NodeJs, Integration, Webservices, Docker"
+        content="Teufel IT, Apps, Mobile App, Mobile Anwendungsentwicklung, iOS App, Native, 
+        Softwareentwickler, Softwareentwicklung, Anwendungsentwicklung, Typescript, JavaScript, 
+        Java, NodeJs, Integration, Migration, Webservices, Docker, DevOps, Linux"
       />
       <link rel="canonical" href={`http://teufel-it.de/${props.pageContext.locale}/projects`} />
     </Helmet>
